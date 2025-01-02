@@ -2,19 +2,27 @@ const Hero = () => {
   return (
     <div className="relative min-h-screen flex items-center bg-white">
       <div className="container mx-auto px-6 py-16 flex flex-col lg:flex-row items-center gap-12">
-        {/* Left side - Phone mockup */}
+        {/* Left side - Laptop mockup */}
         <div className="lg:w-1/2 flex justify-center lg:justify-end">
-          <div className="relative w-[320px] h-[640px] bg-black rounded-[60px] p-4 border-[14px] border-black">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120px] h-[30px] bg-black rounded-b-[20px]"></div>
-            <div className="w-full h-full bg-[#15202b] rounded-[45px] flex items-center justify-center overflow-hidden p-3">
-              <div className="w-full max-w-[280px] flex items-center justify-center">
-                <img 
-                  src="/lovable-uploads/0ce138c5-ae64-42d0-bb9a-8d724d03f725.png" 
-                  alt="Twitter post about Myriad alpha"
-                  className="w-full h-auto object-contain"
-                  style={{ imageRendering: 'crisp-edges' }}
-                />
+          <div className="relative">
+            {/* Laptop lid */}
+            <div className="relative w-[640px] h-[400px] bg-gray-800 rounded-t-lg p-2">
+              {/* Screen */}
+              <div className="w-full h-full bg-[#15202b] rounded-sm flex items-center justify-center overflow-hidden p-3">
+                <div className="w-full max-w-[560px] flex items-center justify-center">
+                  <img 
+                    src="/lovable-uploads/0ce138c5-ae64-42d0-bb9a-8d724d03f725.png" 
+                    alt="Twitter post about Myriad alpha"
+                    className="w-full h-auto object-contain"
+                    style={{ imageRendering: 'crisp-edges' }}
+                  />
+                </div>
               </div>
+            </div>
+            {/* Laptop base */}
+            <div className="relative w-[640px] h-[30px] bg-gray-700 rounded-b-lg">
+              {/* Touchpad area */}
+              <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[100px] h-[5px] bg-gray-600 rounded-b-lg"></div>
             </div>
           </div>
         </div>
