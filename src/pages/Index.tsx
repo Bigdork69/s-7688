@@ -4,6 +4,7 @@ import Features from "../components/Features";
 import Stats from "../components/Stats";
 import Footer from "../components/Footer";
 import LiveFeed from "../components/LiveFeed";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const Index = () => {
   return (
@@ -52,6 +53,67 @@ const Index = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="py-24 bg-surface">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-primary mb-4">Frequently Asked Questions</h2>
+              <p className="text-lg text-secondary">
+                If you can't find an answer that you're looking for, feel free to drop us a line.
+              </p>
+              <div className="flex gap-4 justify-center mt-6">
+                <button className="px-6 py-2 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors">
+                  About the company
+                </button>
+                <button className="px-6 py-2 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors">
+                  Contact support
+                </button>
+                <button className="px-6 py-2 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors">
+                  Visit help center
+                </button>
+              </div>
+            </div>
+
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="item-1" className="bg-white rounded-lg px-6">
+                <AccordionTrigger className="text-lg font-medium">Who uses our platform?</AccordionTrigger>
+                <AccordionContent>
+                  Anyone with an audience. Youtubers, musicians, podcasters, writers, programmers, nonprofits, cosplayers, you name it. More than a million creators and their supporters are on our platform.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2" className="bg-white rounded-lg px-6">
+                <AccordionTrigger className="text-lg font-medium">How do I get paid?</AccordionTrigger>
+                <AccordionContent>
+                  We offer multiple payout options including direct bank transfer, PayPal, and cryptocurrency. Payments are processed securely and automatically.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3" className="bg-white rounded-lg px-6">
+                <AccordionTrigger className="text-lg font-medium">How can my audience pay?</AccordionTrigger>
+                <AccordionContent>
+                  Your audience can pay using credit cards, debit cards, PayPal, and various cryptocurrency options. We support multiple payment methods to make it easy for your supporters.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4" className="bg-white rounded-lg px-6">
+                <AccordionTrigger className="text-lg font-medium">Is there a fee to use the platform?</AccordionTrigger>
+                <AccordionContent>
+                  We take a small percentage of transactions to cover operating costs and continue improving the platform. The exact fee depends on your subscription tier.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5" className="bg-white rounded-lg px-6">
+                <AccordionTrigger className="text-lg font-medium">Is the platform safe and reliable?</AccordionTrigger>
+                <AccordionContent>
+                  Yes, we use industry-standard security measures and encryption to protect all transactions and user data. We're trusted by millions of users worldwide.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </div>
