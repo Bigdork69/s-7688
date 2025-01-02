@@ -60,27 +60,6 @@ const Features = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="flex-1">
               <h2 className="text-6xl md:text-7xl font-bold mb-8 text-left">
-                How can I<br />get involved?
-              </h2>
-            </div>
-            <div className="flex-1">
-              <div className="glass p-12 rounded-2xl rotate-2 hover:rotate-0 transition-all duration-300">
-                <img 
-                  src="/lovable-uploads/88c556c6-467a-4724-9b1c-bc49e67fd4ad.png" 
-                  alt="Myriad maths notebook" 
-                  className="w-full h-auto max-w-[600px] mx-auto"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 px-6 bg-surface">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-            <div className="flex-1">
-              <h2 className="text-6xl md:text-7xl font-bold mb-8 text-left">
                 Run the<br />numboors.
               </h2>
             </div>
