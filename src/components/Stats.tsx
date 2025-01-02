@@ -1,7 +1,7 @@
 const stats = [
-  { number: "99%", label: "Customer Satisfaction" },
-  { number: "24/7", label: "Support Available" },
-  { number: "150+", label: "Countries Served" },
+  { number: "99%", label: "Buy A Rug Genesis" },
+  { number: "24/7", label: "Make Predicitions On Myriad" },
+  { number: "150+", label: "Buy $RUG on Uniswap" },
 ];
 
 const Stats = () => {
