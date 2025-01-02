@@ -14,19 +14,8 @@ const Index = () => {
       <Stats />
       <div className="py-12 bg-surface">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div className="space-y-8">
-              <img 
-                src="/lovable-uploads/37555d62-f5de-49e1-a7d7-5c8af4a2d149.png" 
-                alt="Decorative robot illustration" 
-                className="w-full max-w-md mx-auto animate-float"
-              />
-            </div>
-            <div className="flex items-center justify-center">
-              <div className="w-full">
-                <LiveFeed />
-              </div>
-            </div>
+          <div className="w-full">
+            <LiveFeed />
           </div>
         </div>
       </div>
