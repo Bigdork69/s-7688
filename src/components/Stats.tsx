@@ -1,9 +1,9 @@
 import { Button } from "./ui/button";
 
 const stats = [
-  { number: "Buy A Rug Genesis", link: "https://opensea.io" },
-  { number: "Make Predicitions On Myriad", link: "https://myriad.markets" },
-  { number: "Buy $RUG on Uniswap", link: "https://app.uniswap.org" },
+  { number: "Buy A Rug Genesis", link: "https://blur.io/eth/collection/ruggenesis-nft", buttonText: "Buy NFT" },
+  { number: "Make Predicitions On Myriad", link: "https://beta.myriad.markets/", buttonText: "Myriad" },
+  { number: "Buy $RUG on Uniswap", link: "https://app.uniswap.org/explore/tokens/ethereum/0xd2d8d78087d0e43bc4804b6f946674b2ee406b80", buttonText: "Uniswap" },
 ];
 
 const Stats = () => {
@@ -20,7 +20,7 @@ const Stats = () => {
                 className="bg-transparent hover:bg-highlight hover:text-primary border-highlight text-highlight transition-colors"
                 onClick={() => window.open(stat.link, '_blank')}
               >
-                Learn More
+                {stat.buttonText}
               </Button>
             </div>
           ))}
