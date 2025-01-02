@@ -43,7 +43,7 @@ const LiveFeed = () => {
   return (
     <Card className="w-full max-w-4xl mx-auto bg-[#1A1F2C] text-white border-none shadow-xl">
       <CardHeader className="text-center pb-2">
-        <h2 className="text-3xl font-bold mb-2">Live Floor Price</h2>
+        <h2 className="text-3xl font-bold mb-2">Live Rug Radio Floor Price (Updated Every 1hr)</h2>
         <div className="space-y-2">
           {data && (
             <>
