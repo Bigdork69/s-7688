@@ -8,6 +8,7 @@ const Stats = () => {
   return (
     <section className="py-24 px-6 bg-primary text-white">
       <div className="max-w-7xl mx-auto">
+        <h2 className="text-4xl font-bold mb-16 text-center">How Can I Get Involved?</h2>
         <div className="grid md:grid-cols-3 gap-12 text-center">
           {stats.map((stat, index) => (
             <div key={index} className="space-y-2">
