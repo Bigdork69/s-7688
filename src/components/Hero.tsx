@@ -29,11 +29,9 @@ const Hero = () => {
 
         {/* Right side - Content */}
         <div className="lg:w-1/2 text-left">
-          <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-6 text-[#141413]">
-            Gmyriad
-            <br />
+          <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6 text-[#141413]">
+            GMYRIAD
             No More Small Shit
-            <br />
             Scroll Down For Alpha
           </h1>
           <p className="text-xl text-gray-600 mb-8">
