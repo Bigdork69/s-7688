@@ -35,7 +35,7 @@ const Hero = () => {
             <span>Scroll Down For Alpha</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            Start and stop when you want
+            *The tweet blew up so much we created a website to spread the word
           </p>
           <div className="max-w-md">
             <div className="flex gap-2">
