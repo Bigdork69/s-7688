@@ -6,12 +6,15 @@ const Hero = () => {
         <div className="lg:w-1/2 flex justify-center lg:justify-end">
           <div className="relative w-[320px] h-[640px] bg-black rounded-[60px] p-4 border-[14px] border-black">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120px] h-[30px] bg-black rounded-b-[20px]"></div>
-            <div className="w-full h-full bg-[#15202b] rounded-[45px] flex items-center justify-center overflow-hidden">
-              <img 
-                src="/lovable-uploads/0ce138c5-ae64-42d0-bb9a-8d724d03f725.png" 
-                alt="Twitter post about Myriad alpha"
-                className="w-[90%] h-auto"
-              />
+            <div className="w-full h-full bg-[#15202b] rounded-[45px] flex items-center justify-center overflow-hidden p-3">
+              <div className="w-full max-w-[280px] flex items-center justify-center">
+                <img 
+                  src="/lovable-uploads/0ce138c5-ae64-42d0-bb9a-8d724d03f725.png" 
+                  alt="Twitter post about Myriad alpha"
+                  className="w-full h-auto object-contain"
+                  style={{ imageRendering: 'crisp-edges' }}
+                />
+              </div>
             </div>
           </div>
         </div>
