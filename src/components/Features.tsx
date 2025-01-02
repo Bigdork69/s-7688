@@ -23,7 +23,7 @@ const features = [
 
 const Features = () => {
   return (
-    <section id="features" className="py-24 px-6 dot-pattern">
+    <section id="features" className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
           Designed for Excellence
@@ -35,8 +35,8 @@ const Features = () => {
               key={index}
               className="glass p-8 rounded-2xl hover:bg-opacity-20 transition-all duration-300 flex flex-col items-center text-center"
             >
-              <div className="w-24 h-24 rounded-full bg-highlight flex items-center justify-center mb-6">
-                <span className="text-4xl font-bold text-primary">{feature.number}</span>
+              <div className="w-24 h-24 rounded-full bg-primary flex items-center justify-center mb-6">
+                <span className="text-4xl font-bold text-white">{feature.number}</span>
               </div>
               <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
               <p className="text-secondary">{feature.description}</p>
