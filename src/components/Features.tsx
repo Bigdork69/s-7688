@@ -59,7 +59,7 @@ const Features = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="flex-1">
-              <h2 className="text-5xl md:text-6xl font-bold mb-8 text-left">
+              <h2 className="text-6xl md:text-7xl font-bold mb-8 text-left">
                 Run the<br />numboors.
               </h2>
             </div>
