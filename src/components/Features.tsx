@@ -24,15 +24,15 @@ const features = [
 const Features = () => {
   return (
     <>
-      <section id="features" className="py-24 px-6">
+      <section id="features" className="py-24 px-6 bg-primary text-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-white">
             The Alpha According to{" "}
             <a 
               href="https://x.com/tylerdurdeth" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="underline hover:text-gray-700 transition-colors"
+              className="underline hover:text-gray-300 transition-colors"
             >
               @tylerdurdeth
             </a>
@@ -44,22 +44,22 @@ const Features = () => {
                 key={index}
                 className="glass p-8 rounded-2xl hover:bg-opacity-20 transition-all duration-300 flex flex-col items-center text-center"
               >
-                <div className="w-24 h-24 rounded-full bg-primary flex items-center justify-center mb-6">
-                  <span className="text-4xl font-bold text-white">{feature.number}</span>
+                <div className="w-24 h-24 rounded-full bg-white flex items-center justify-center mb-6">
+                  <span className="text-4xl font-bold text-primary">{feature.number}</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
-                <p className="text-secondary">{feature.description}</p>
+                <h3 className="text-xl font-semibold mb-4 text-white">{feature.title}</h3>
+                <p className="text-gray-300">{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-surface">
+      <section className="py-24 px-6 bg-primary">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="flex-1">
-              <h2 className="text-6xl md:text-7xl font-bold mb-8 text-left">
+              <h2 className="text-6xl md:text-7xl font-bold mb-8 text-left text-white">
                 Run the<br />numboors.
               </h2>
             </div>
