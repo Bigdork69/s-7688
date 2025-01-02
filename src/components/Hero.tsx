@@ -38,16 +38,6 @@ const Hero = () => {
             *The tweet blew up so much we created a website to spread the word
           </p>
           <div className="max-w-md">
-            <div className="flex gap-2">
-              <input
-                type="email"
-                placeholder="Email"
-                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#F2FF44]"
-              />
-              <button className="px-8 py-3 bg-[#F2FF44] text-[#141413] rounded-lg font-medium hover:bg-[#E6FF00] transition-colors">
-                Next
-              </button>
-            </div>
             <p className="mt-4 inline-block text-[#141413] font-medium italic font-bold">
               For entertainment purposes only. This fan-made site is not affiliated with Myriad and does not provide financial advice
             </p>
