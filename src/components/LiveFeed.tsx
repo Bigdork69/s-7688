@@ -43,10 +43,19 @@ const LiveFeed = () => {
   return (
     <Card className="w-full max-w-4xl mx-auto bg-[#1A1F2C] text-white border-none shadow-xl">
       <CardHeader className="text-center pb-2">
-        <h2 className="text-3xl font-bold mb-2">Blockchain Identity Verification</h2>
-        <p className="text-muted text-sm">
-          Current rate 1 KYC = {data ? `${formatPrice(data.price.amount.usd)} USD` : '...'} Discount 12% from final price
-        </p>
+        <h2 className="text-3xl font-bold mb-2">Live Floor Price</h2>
+        <div className="space-y-2">
+          {data && (
+            <>
+              <p className="text-2xl font-bold">
+                Ξ {formatPrice(data.price.amount.native)} ETH
+              </p>
+              <p className="text-xl text-gray-300">
+                ${formatPrice(data.price.amount.usd)} USD
+              </p>
+            </>
+          )}
+        </div>
       </CardHeader>
       <CardContent className="space-y-6">
         {isLoading ? (
