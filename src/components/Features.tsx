@@ -59,9 +59,11 @@ const Features = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="flex-1">
-              <h2 className="text-6xl md:text-7xl font-bold mb-8 text-left text-primary">
-                Run the<br />numboors.
-              </h2>
+              <img 
+                src="/lovable-uploads/5e3d98f7-c941-43f6-92bb-13566e3eab8b.png" 
+                alt="Robot circuit illustration"
+                className="w-full h-auto"
+              />
             </div>
             <div className="flex-1">
               <div className="glass p-12 rounded-2xl rotate-2 hover:rotate-0 transition-all duration-300">
