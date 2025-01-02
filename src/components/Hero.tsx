@@ -6,31 +6,12 @@ const Hero = () => {
         <div className="lg:w-1/2 flex justify-center lg:justify-end">
           <div className="relative w-[320px] h-[640px] bg-black rounded-[60px] p-4 border-[14px] border-black">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120px] h-[30px] bg-black rounded-b-[20px]"></div>
-            <div className="w-full h-full bg-[#F8FAFF] rounded-[45px] p-4">
-              <div className="flex items-center gap-2 mb-6">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                <span className="font-medium">Antimetal</span>
-              </div>
-              <div className="space-y-4">
-                <div className="bg-white p-4 rounded-lg shadow-sm">
-                  <div className="text-sm text-gray-600">Current week</div>
-                  <div className="text-2xl font-bold text-[#141413]">$41,222</div>
-                </div>
-                <div className="space-y-2">
-                  {[
-                    { date: 'Feb 18 - Feb 24', amount: '$600.52' },
-                    { date: 'Feb 11 - Feb 17', amount: '$532.78' },
-                    { date: 'Feb 4 - Feb 10', amount: '$415.33' },
-                  ].map((item, index) => (
-                    <div key={index} className="bg-white p-3 rounded-lg shadow-sm flex justify-between items-center">
-                      <span className="text-sm text-gray-600">{item.date}</span>
-                      <span className="font-medium">{item.amount}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+            <div className="w-full h-full bg-[#15202b] rounded-[45px] p-4 overflow-hidden">
+              <img 
+                src="/lovable-uploads/0ce138c5-ae64-42d0-bb9a-8d724d03f725.png" 
+                alt="Twitter post about Myriad alpha"
+                className="w-full h-auto rounded-lg"
+              />
             </div>
           </div>
         </div>
