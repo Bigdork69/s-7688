@@ -26,7 +26,14 @@ const Features = () => {
     <section id="features" className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-          Designed for Excellence
+          <a 
+            href="https://x.com/tylerdurdeth" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:text-gray-700 transition-colors"
+          >
+            Alpha by @tylerdurdeth
+          </a>
         </h2>
         
         <div className="grid md:grid-cols-4 gap-8">
