@@ -42,21 +42,6 @@ const LiveFeed = () => {
 
   return (
     <Card className="w-full max-w-4xl mx-auto bg-[#1A1F2C] text-white border-none shadow-xl">
-      <CardHeader className="text-center pb-2">
-        <h2 className="text-3xl font-bold mb-2 text-white">Rug Radio Live Price (updated every hour)</h2>
-        <div className="space-y-2">
-          {data && (
-            <>
-              <p className="text-2xl font-bold">
-                Ξ {formatPrice(data.price.amount.native)} ETH
-              </p>
-              <p className="text-xl text-gray-300">
-                ${formatPrice(data.price.amount.usd)} USD
-              </p>
-            </>
-          )}
-        </div>
-      </CardHeader>
       <CardContent className="space-y-6">
         {isLoading ? (
           <div className="space-y-2">
