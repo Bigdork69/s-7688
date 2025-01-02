@@ -1,8 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 
 interface FloorPriceData {
   price: {
@@ -20,7 +22,7 @@ const LiveFeed = () => {
     return data;
   };
 
-  const { data, error, isLoading, refetch } = useQuery({
+  const { data, error, isLoading } = useQuery({
     queryKey: ['floorPrice'],
     queryFn: fetchFloorPrice,
     refetchInterval: 60000, // Refetch every 60 seconds
@@ -39,30 +41,41 @@ const LiveFeed = () => {
   };
 
   return (
-    <Card className="w-full max-w-md mx-auto bg-white shadow-lg">
-      <CardHeader>
-        <CardTitle className="text-xl font-bold text-center">
-          Rug Radio Genesis Floor Price
-        </CardTitle>
+    <Card className="w-full max-w-4xl mx-auto bg-[#1A1F2C] text-white border-none shadow-xl">
+      <CardHeader className="text-center pb-2">
+        <h2 className="text-3xl font-bold mb-2">Blockchain Identity Verification</h2>
+        <p className="text-muted text-sm">
+          Current rate 1 KYC = {data ? `${formatPrice(data.price.amount.usd)} USD` : '...'} Discount 12% from final price
+        </p>
       </CardHeader>
-      <CardContent>
+      <CardContent className="space-y-6">
         {isLoading ? (
           <div className="space-y-2">
-            <Skeleton className="h-8 w-full" />
-            <Skeleton className="h-8 w-full" />
+            <Skeleton className="h-8 w-full bg-gray-700" />
+            <Skeleton className="h-8 w-full bg-gray-700" />
           </div>
         ) : error ? (
-          <div className="text-red-500 text-center py-4">
+          <div className="text-red-400 text-center py-4">
             Error fetching floor price
           </div>
         ) : data ? (
-          <div className="space-y-2 text-center">
-            <p className="text-2xl font-bold text-primary">
-              Ξ {formatPrice(data.price.amount.native)} ETH
-            </p>
-            <p className="text-xl text-secondary">
-              ${formatPrice(data.price.amount.usd)} USD
-            </p>
+          <div className="space-y-6">
+            <div className="flex justify-center gap-4">
+              <Button className="bg-[#4CD964] hover:bg-[#45C359] text-white px-8 rounded-full">
+                Get White Paper
+              </Button>
+              <Button className="bg-[#3898FF] hover:bg-[#2F89F2] text-white px-8 rounded-full">
+                Onepager
+              </Button>
+            </div>
+            <div className="flex justify-center">
+              <Button 
+                className="bg-[#3898FF] hover:bg-[#2F89F2] text-white px-8 rounded-full flex items-center gap-2"
+                onClick={() => window.open('https://blur.io/collection/ruggenesis-nft', '_blank')}
+              >
+                Buy on Blur <ExternalLink className="w-4 h-4" />
+              </Button>
+            </div>
           </div>
         ) : (
           <div className="text-center py-4 text-muted">
