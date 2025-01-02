@@ -70,10 +70,10 @@ const LiveFeed = () => {
         ) : data ? (
           <div className="flex justify-center">
             <Button 
-              className="bg-[#3898FF] hover:bg-[#2F89F2] text-white px-8 rounded-full flex items-center gap-2"
+              className="bg-[#D77F2F] hover:bg-[#C16E2A] text-white px-8 rounded-full flex items-center gap-2"
               onClick={() => window.open('https://blur.io/collection/ruggenesis-nft', '_blank')}
             >
-              Buy on Blur <ExternalLink className="w-4 h-4" />
+              Rug Me Daddy <ExternalLink className="w-4 h-4" />
             </Button>
           </div>
         ) : (
