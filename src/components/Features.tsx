@@ -55,11 +55,11 @@ const Features = () => {
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-primary">
+      <section className="py-24 px-6 bg-surface">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="flex-1">
-              <h2 className="text-6xl md:text-7xl font-bold mb-8 text-left text-white">
+              <h2 className="text-6xl md:text-7xl font-bold mb-8 text-left text-primary">
                 Run the<br />numboors.
               </h2>
             </div>
