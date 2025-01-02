@@ -1,20 +1,4 @@
-import { useState } from 'react';
-import { Button } from "./ui/button";
-
 const QuoteSection = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
-  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setSelectedImage(reader.result as string);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
   return (
     <section className="py-24 bg-surface">
       <div className="container mx-auto px-4">
@@ -28,35 +12,12 @@ const QuoteSection = () => {
             </h2>
           </div>
 
-          <div className="relative aspect-[3/4] bg-gray-100 rounded-lg overflow-hidden">
-            {selectedImage ? (
-              <img
-                src={selectedImage}
-                alt="Uploaded content"
-                className="w-full h-full object-cover"
-              />
-            ) : (
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={handleImageUpload}
-                  className="hidden"
-                  id="image-upload"
-                />
-                <label
-                  htmlFor="image-upload"
-                  className="cursor-pointer text-center"
-                >
-                  <Button variant="outline" className="mb-2">
-                    Upload Image
-                  </Button>
-                  <p className="text-sm text-muted">
-                    Click to upload an image
-                  </p>
-                </label>
-              </div>
-            )}
+          <div className="relative aspect-square bg-gray-100 rounded-lg overflow-hidden">
+            <img
+              src="/lovable-uploads/c20c59d5-ef3b-43ae-b907-a3a63f8dd3f1.png"
+              alt="The Hearing Things meme"
+              className="w-full h-full object-contain"
+            />
           </div>
         </div>
       </div>
