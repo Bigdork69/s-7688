@@ -15,10 +15,16 @@ const Index = () => {
       <Stats />
       <div className="py-12 bg-surface">
         <div className="container mx-auto px-4">
-          <LiveFeed />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <div className="space-y-8">
+              <FAQ />
+            </div>
+            <div>
+              <LiveFeed />
+            </div>
+          </div>
         </div>
       </div>
-      <FAQ />
       <Footer />
     </div>
   );
