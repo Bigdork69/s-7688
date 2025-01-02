@@ -43,7 +43,7 @@ const LiveFeed = () => {
   return (
     <Card className="w-full max-w-4xl mx-auto bg-[#1A1F2C] text-white border-none shadow-xl">
       <CardHeader className="text-center pb-2">
-        <h2 className="text-3xl font-bold mb-2">Live Rug Radio Floor Price (Updated Every 1hr)</h2>
+        <h2 className="text-3xl font-bold mb-2" style={{ color: '#D77F2F' }}>Rug Me Daddy</h2>
         <div className="space-y-2">
           {data && (
             <>
@@ -68,23 +68,13 @@ const LiveFeed = () => {
             Error fetching floor price
           </div>
         ) : data ? (
-          <div className="space-y-6">
-            <div className="flex justify-center gap-4">
-              <Button className="bg-[#4CD964] hover:bg-[#45C359] text-white px-8 rounded-full">
-                Get White Paper
-              </Button>
-              <Button className="bg-[#3898FF] hover:bg-[#2F89F2] text-white px-8 rounded-full">
-                Onepager
-              </Button>
-            </div>
-            <div className="flex justify-center">
-              <Button 
-                className="bg-[#3898FF] hover:bg-[#2F89F2] text-white px-8 rounded-full flex items-center gap-2"
-                onClick={() => window.open('https://blur.io/collection/ruggenesis-nft', '_blank')}
-              >
-                Buy on Blur <ExternalLink className="w-4 h-4" />
-              </Button>
-            </div>
+          <div className="flex justify-center">
+            <Button 
+              className="bg-[#3898FF] hover:bg-[#2F89F2] text-white px-8 rounded-full flex items-center gap-2"
+              onClick={() => window.open('https://blur.io/collection/ruggenesis-nft', '_blank')}
+            >
+              Buy on Blur <ExternalLink className="w-4 h-4" />
+            </Button>
           </div>
         ) : (
           <div className="text-center py-4 text-muted">
