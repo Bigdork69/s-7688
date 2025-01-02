@@ -20,20 +20,38 @@ const QuoteSection = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
-            <h2 className="text-5xl font-light text-primary/80 leading-tight">
-              The ones who are<br />
-              crazy enough to think<br />
-              they can <span className="underline">change</span> the<br />
-              world.
-            </h2>
+            <h2 className="text-4xl font-bold text-primary mb-8">The Hearing Thingsoooooor</h2>
+            <ul className="space-y-4 text-left text-lg">
+              <li className="flex items-center space-x-2">
+                <span className="font-medium">• I don't want to name names</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className="font-medium">• As soon as tomorrow</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className="font-medium">• Sources extremely close to the matter</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className="font-medium">• Big if true</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className="font-medium">• Rumblings rumors whispers</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className="font-medium">• My sources</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className="font-medium">• Expecting something imminently</span>
+              </li>
+            </ul>
           </div>
 
-          <div className="relative aspect-[3/4] bg-gray-100 rounded-lg overflow-hidden">
+          <div className="relative aspect-square bg-gray-100 rounded-lg overflow-hidden">
             {selectedImage ? (
               <img
                 src={selectedImage}
                 alt="Uploaded content"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             ) : (
               <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
