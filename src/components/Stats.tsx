@@ -1,5 +1,5 @@
 const stats = [
-  { number: <img src="/lovable-uploads/ecedced6-c9f3-4777-948d-c084917705f4.png" alt="Circuit board banner" className="w-full h-auto" />, label: "Buy A Rug Genesis" },
+  { number: "99%", label: "Buy A Rug Genesis" },
   { number: "24/7", label: "Make Predicitions On Myriad" },
   { number: "150+", label: "Buy $RUG on Uniswap" },
 ];
