@@ -23,8 +23,8 @@ const Index = () => {
 
             <div className="space-y-8">
               <img 
-                src="/lovable-uploads/68b54740-8211-464b-b744-33cc14127876.png"
-                alt="Robot circuit illustration"
+                src="/lovable-uploads/cce4c619-6b67-45ed-8d17-a3301100eacd.png"
+                alt="Robot circuit board illustration"
                 className="w-full h-auto"
               />
               <p className="text-xl text-secondary">
