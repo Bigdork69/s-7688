@@ -12,13 +12,6 @@ const Index = () => {
       <Hero />
       <Features />
       <Stats />
-      <div className="py-12 bg-surface">
-        <div className="container mx-auto px-4">
-          <div className="w-full">
-            <LiveFeed />
-          </div>
-        </div>
-      </div>
 
       <div className="py-24 bg-gradient-to-br from-primary/5 to-primary/10">
         <div className="container mx-auto px-4">
