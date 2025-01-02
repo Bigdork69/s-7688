@@ -30,11 +30,9 @@ const Hero = () => {
         {/* Right side - Content */}
         <div className="lg:w-1/2 text-left">
           <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-6 text-[#141413]">
-            Your time.
+            GMYRIAD
             <br />
-            Your goals.
-            <br />
-            You're the boss.
+            No more small shit
           </h1>
           <p className="text-xl text-gray-600 mb-8">
             Start and stop when you want
