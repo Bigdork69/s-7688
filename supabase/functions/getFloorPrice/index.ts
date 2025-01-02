@@ -16,9 +16,10 @@ serve(async (req) => {
 
   try {
     console.log('Fetching floor price from Reservoir API...');
+    console.log('Using API Key:', RESERVOIR_API_KEY ? 'Present' : 'Missing');
     
     const response = await fetch(
-      `https://api.reservoir.tools/collections/${COLLECTION_ADDRESS}/floor`,
+      `https://api.reservoir.tools/collections/v6?contract=${COLLECTION_ADDRESS}`,
       {
         headers: {
           'accept': '*/*',
@@ -28,14 +29,30 @@ serve(async (req) => {
     );
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      const errorText = await response.text();
+      console.error('Reservoir API error:', {
+        status: response.status,
+        statusText: response.statusText,
+        body: errorText
+      });
+      throw new Error(`HTTP error! status: ${response.status}, body: ${errorText}`);
     }
 
     const data = await response.json();
     console.log('Reservoir API response:', data);
 
+    // Transform the data to match our expected format
+    const transformedData = {
+      price: {
+        amount: {
+          native: data.collections[0].floorAsk.price.amount.native,
+          usd: data.collections[0].floorAsk.price.amount.usd
+        }
+      }
+    };
+
     return new Response(
-      JSON.stringify(data),
+      JSON.stringify(transformedData),
       { 
         headers: { 
           ...corsHeaders,
