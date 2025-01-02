@@ -26,13 +26,14 @@ const Features = () => {
     <section id="features" className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+          The Alpha According to{" "}
           <a 
             href="https://x.com/tylerdurdeth" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="hover:text-gray-700 transition-colors"
+            className="underline hover:text-gray-700 transition-colors"
           >
-            Alpha by @tylerdurdeth
+            @tylerdurdeth
           </a>
         </h2>
         
