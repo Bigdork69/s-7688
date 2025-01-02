@@ -1,23 +1,23 @@
 const features = [
   {
     number: "1",
-    title: "Like The Real Thing",
-    description: "Our wind tunnel simulates the rush of true freefall by drawing air through a central flight chamber through a large propeller at the top."
+    title: "Maximize Your Points",
+    description: "Don't hold back—use all your Myriad points on predictions! High transaction volumes are key to attracting T1 CEXs and market makers, which will drive $MYR's value. The more active you are, the better your farming rewards and the higher the launch valuation. Go full degen!"
   },
   {
     number: "2",
-    title: "Expert Instructors",
-    description: "Our highly-trained tunnel instructors provide you with a full pre-flight briefing and are always available to give you the assurance you need to focus on maximizing the enjoyment from your time with us."
+    title: "Referral Program Incoming",
+    description: "Get ready to earn big with the upcoming referral program. Bring in friends, family, colleagues—anyone who can join before March—and rack up those points. It'll pay off massively."
   },
   {
     number: "3",
-    title: "Used by The Pros",
-    description: "Not only is our state-of-the-art facility used by world-class parachute teams like the Red Devils to perfect their moves, but even James Bond himself, Daniel Craig, has trained in our wind tunnel to prepare for the role."
+    title: "Early Bird Advantage",
+    description: "Jump into markets early for the best odds. New markets are less efficient at first, giving you an edge. A notification feature is coming soon to keep you updated on fresh opportunities!"
   },
   {
     number: "4",
-    title: "Adventure Awaits...",
-    description: "After your skydive you will also have the opportunity to try a host of other adrenaline-fuelled activities - from riding the waves of our indoor surf machine, to testing your nerve with our famous vertigo jump!"
+    title: "Not Just Another Copycat",
+    description: "Myriad is miles ahead of competitors like Polymarket, having laid the groundwork long before they grew big. The future looks bright because of the hard work behind the scenes."
   }
 ];
 
