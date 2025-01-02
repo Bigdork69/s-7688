@@ -27,9 +27,6 @@ const Index = () => {
                 alt="Robot circuit board illustration"
                 className="w-full h-auto"
               />
-              <p className="text-xl text-secondary">
-                Collect market analysis, trading strategies, and real-time data in one place. Lightning-fast access to your research when you need it most.
-              </p>
               
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
