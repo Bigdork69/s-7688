@@ -25,7 +25,7 @@ const LiveFeed = () => {
   const { data, error, isLoading } = useQuery({
     queryKey: ['floorPrice'],
     queryFn: fetchFloorPrice,
-    refetchInterval: 60000, // Refetch every 60 seconds
+    refetchInterval: 3600000, // Refetch every hour (3600000 milliseconds)
   });
 
   useEffect(() => {
