@@ -17,7 +17,7 @@ const features = [
   {
     number: "4",
     title: "Not Just Another Copycat",
-    description: "Myriad is miles ahead of competitors like Polymarket, having laid the groundwork long before they grew big. The future looks bright because of the hard work behind the scenes."
+    description: "Myriad isn't trying to mimic Polymarket—it's a completely different product with a unique approach. The foundation was built long before Polymarket gained traction, and the future shines bright because of that early groundwork."
   }
 ];
 
