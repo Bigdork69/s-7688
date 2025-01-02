@@ -1,7 +1,7 @@
 const stats = [
-  { number: "99%", label: "Buy A Rug Genesis" },
-  { number: "24/7", label: "Make Predicitions On Myriad" },
-  { number: "150+", label: "Buy $RUG on Uniswap" },
+  { number: "Buy A Rug Genesis", label: "Buy A Rug Genesis" },
+  { number: "Make Predicitions On Myriad", label: "Make Predicitions On Myriad" },
+  { number: "Buy $RUG on Uniswap", label: "Buy $RUG on Uniswap" },
 ];
 
 const Stats = () => {
