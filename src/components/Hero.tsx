@@ -29,10 +29,10 @@ const Hero = () => {
 
         {/* Right side - Content */}
         <div className="lg:w-1/2 text-left">
-          <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6 text-[#141413]">
-            GMYRIAD
-            No More Small Shit
-            Scroll Down For Alpha
+          <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6 text-[#141413] flex flex-col">
+            <span>GMYRIAD</span>
+            <span>No More Small Shit</span>
+            <span>Scroll Down For Alpha</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8">
             Start and stop when you want
