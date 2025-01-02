@@ -1,9 +1,9 @@
 import { Button } from "./ui/button";
 
 const stats = [
-  { number: "Buy A Rug Genesis", label: "Buy A Rug Genesis", link: "https://opensea.io" },
-  { number: "Make Predicitions On Myriad", label: "Make Predicitions On Myriad", link: "https://myriad.markets" },
-  { number: "Buy $RUG on Uniswap", label: "Buy $RUG on Uniswap", link: "https://app.uniswap.org" },
+  { number: "Buy A Rug Genesis", link: "https://opensea.io" },
+  { number: "Make Predicitions On Myriad", link: "https://myriad.markets" },
+  { number: "Buy $RUG on Uniswap", link: "https://app.uniswap.org" },
 ];
 
 const Stats = () => {
@@ -16,7 +16,6 @@ const Stats = () => {
             <div key={index} className="space-y-4">
               <div className="space-y-2">
                 <div className="text-2xl md:text-3xl font-bold">{stat.number}</div>
-                <div className="text-accent text-sm">{stat.label}</div>
               </div>
               <Button 
                 variant="outline" 
