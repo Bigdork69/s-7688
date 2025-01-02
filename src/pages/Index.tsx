@@ -25,7 +25,9 @@ const Index = () => {
               <FAQ />
             </div>
             <div className="flex items-center justify-center">
-              <LiveFeed />
+              <div className="w-full">
+                <LiveFeed />
+              </div>
             </div>
           </div>
         </div>
@@ -35,27 +37,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div className="glass rounded-3xl shadow-xl p-8 transform rotate-1">
-              <div className="space-y-4">
-                <div className="flex items-center gap-2 text-secondary mb-6">
-                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between text-sm text-muted">
-                    <span>October 30th, 2024</span>
-                    <span>12:00 AM</span>
-                  </div>
-                  <div className="p-4 rounded-lg bg-primary/5 hover:bg-primary/10 transition-colors cursor-pointer">
-                    <h3 className="font-medium text-primary">Market Analysis Report</h3>
-                    <p className="text-sm text-secondary mt-1">Key insights from today's market movements and trends...</p>
-                  </div>
-                  <div className="p-4 rounded-lg bg-primary/5 hover:bg-primary/10 transition-colors cursor-pointer">
-                    <h3 className="font-medium text-primary">Trading Strategy Update</h3>
-                    <p className="text-sm text-secondary mt-1">Review of current positions and upcoming opportunities...</p>
-                  </div>
-                </div>
-              </div>
+              <LiveFeed />
             </div>
 
             <div className="space-y-8">
