@@ -8,7 +8,7 @@ const FAQ = () => {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-primary mb-4">Frequently Asked Questions</h2>
             <p className="text-lg text-secondary">
-              If you can't find an answer that you're looking for, feel free to drop us a line.
+              FAQ directly from the <a href="https://discord.gg/myriadmarkets" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Myriad Discord</a>
             </p>
             <div className="flex gap-4 justify-center mt-6">
               <button className="px-6 py-2 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors">
