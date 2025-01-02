@@ -3,7 +3,7 @@ const Footer = () => {
     <footer className="bg-primary text-white mt-24 py-16">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center">
-          <p className="text-accent">
+          <p className="text-white text-[1.3em]">
             Created by <a 
               href="https://x.com/MarcusSmtf" 
               target="_blank" 
