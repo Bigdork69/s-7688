@@ -48,12 +48,6 @@ const Hero = () => {
                 Next
               </button>
             </div>
-            <p className="mt-4 text-sm text-gray-500">
-              By clicking "Next", I agree to the{" "}
-              <a href="#" className="text-[#141413] underline">
-                Independent Contractor Agreement
-              </a>
-            </p>
             <p className="mt-4 inline-block text-[#141413] font-medium italic font-bold">
               For entertainment purposes only. This fan-made site is not affiliated with Myriad and does not provide financial advice
             </p>
