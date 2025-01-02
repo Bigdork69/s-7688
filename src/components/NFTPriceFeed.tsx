@@ -11,9 +11,9 @@ const NFTPriceFeed = () => {
   const [floorPrice, setFloorPrice] = useState<FloorPrice | null>(null);
 
   // Reservoir API configuration
-  const COLLECTION_SLUG = "rug-genesis";
-  const BLUR_COLLECTION_URL = "https://blur.io/collection/rug-genesis";
-  const API_URL = `https://api.reservoir.tools/collections/v6?slug=${COLLECTION_SLUG}`;
+  const CONTRACT_ADDRESS = "0x8ff1523091c9517bc328223d50b52ef450200339";
+  const BLUR_COLLECTION_URL = `https://blur.io/collection/${CONTRACT_ADDRESS}`;
+  const API_URL = `https://api.reservoir.tools/collections/${CONTRACT_ADDRESS}/floor`;
 
   const fetchFloorPrice = async () => {
     console.log("Fetching floor price data...");
@@ -30,12 +30,11 @@ const NFTPriceFeed = () => {
       }
       
       const data = await response.json();
-      const collection = data.collections[0];
       
-      if (collection) {
+      if (data) {
         setFloorPrice({
-          price: collection.floorAsk.price?.amount?.native || 0,
-          usdPrice: collection.floorAsk.price?.amount?.usd || 0
+          price: data.price?.amount?.native || 0,
+          usdPrice: data.price?.amount?.usd || 0
         });
       }
     } catch (error) {
@@ -47,7 +46,7 @@ const NFTPriceFeed = () => {
   const { data, isLoading, isError } = useQuery({
     queryKey: ["floorPrice"],
     queryFn: fetchFloorPrice,
-    refetchInterval: 30000, // Refetch every 30 seconds
+    refetchInterval: 60000, // Updated to 60 seconds as requested
   });
 
   if (isLoading) {
@@ -70,7 +69,7 @@ const NFTPriceFeed = () => {
   return (
     <div className="p-6 rounded-lg glass">
       <div className="flex flex-col space-y-4">
-        <h3 className="text-2xl font-bold">Rug Genesis Floor Price</h3>
+        <h3 className="text-2xl font-bold">Rug Radio Genesis Floor Price</h3>
         <div className="flex flex-col space-y-2">
           {floorPrice && (
             <>
