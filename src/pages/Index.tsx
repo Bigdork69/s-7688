@@ -11,13 +11,13 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
+      <Features />
+      <Stats />
       <div className="py-12 bg-surface">
         <div className="container mx-auto px-4">
           <LiveFeed />
         </div>
       </div>
-      <Features />
-      <Stats />
       <FAQ />
       <Footer />
     </div>
