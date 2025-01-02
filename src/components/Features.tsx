@@ -64,11 +64,11 @@ const Features = () => {
               </h2>
             </div>
             <div className="flex-1">
-              <div className="glass p-8 rounded-2xl rotate-2 hover:rotate-0 transition-all duration-300">
+              <div className="glass p-12 rounded-2xl rotate-2 hover:rotate-0 transition-all duration-300">
                 <img 
                   src="/lovable-uploads/1e95b61c-0edb-4ddc-aaa8-9221e610f701.png" 
                   alt="Myriad maths notebook" 
-                  className="w-full h-auto"
+                  className="w-full h-auto max-w-[600px] mx-auto"
                 />
               </div>
             </div>
