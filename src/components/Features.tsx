@@ -65,21 +65,11 @@ const Features = () => {
             </div>
             <div className="flex-1">
               <div className="glass p-8 rounded-2xl rotate-2 hover:rotate-0 transition-all duration-300">
-                <div className="text-left space-y-4">
-                  <div className="border-b-2 border-secondary pb-4">
-                    <p className="text-lg font-medium">Here are the maths:</p>
-                  </div>
-                  <div className="space-y-2 py-4">
-                    <p>1 $rug = 1 $myr</p>
-                    <p>1 RDAO = 1800 $rug</p>
-                    <p>1 standard Genesis NFT ~ 4k $rug</p>
-                    <p>1 scarce Genesis NFT ~ 5.5k $rug</p>
-                  </div>
-                  <div className="pt-4 flex items-center gap-4">
-                    <div className="w-12 h-12 bg-blue-500 rounded-full"></div>
-                    <p>Days since last rug = 0</p>
-                  </div>
-                </div>
+                <img 
+                  src="/lovable-uploads/1e95b61c-0edb-4ddc-aaa8-9221e610f701.png" 
+                  alt="Myriad maths notebook" 
+                  className="w-full h-auto"
+                />
               </div>
             </div>
           </div>
