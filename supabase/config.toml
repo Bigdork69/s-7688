@@ -1,1 +1,4 @@
 project_id = "udzkgjfxvnswuceqmcfy"
+
+[functions.getFloorPrice]
+verify_jwt = false
