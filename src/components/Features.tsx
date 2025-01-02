@@ -23,36 +23,69 @@ const features = [
 
 const Features = () => {
   return (
-    <section id="features" className="py-24 px-6">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-          The Alpha According to{" "}
-          <a 
-            href="https://x.com/tylerdurdeth" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="underline hover:text-gray-700 transition-colors"
-          >
-            @tylerdurdeth
-          </a>
-        </h2>
-        
-        <div className="grid md:grid-cols-4 gap-8">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="glass p-8 rounded-2xl hover:bg-opacity-20 transition-all duration-300 flex flex-col items-center text-center"
+    <>
+      <section id="features" className="py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+            The Alpha According to{" "}
+            <a 
+              href="https://x.com/tylerdurdeth" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="underline hover:text-gray-700 transition-colors"
             >
-              <div className="w-24 h-24 rounded-full bg-primary flex items-center justify-center mb-6">
-                <span className="text-4xl font-bold text-white">{feature.number}</span>
+              @tylerdurdeth
+            </a>
+          </h2>
+          
+          <div className="grid md:grid-cols-4 gap-8">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="glass p-8 rounded-2xl hover:bg-opacity-20 transition-all duration-300 flex flex-col items-center text-center"
+              >
+                <div className="w-24 h-24 rounded-full bg-primary flex items-center justify-center mb-6">
+                  <span className="text-4xl font-bold text-white">{feature.number}</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
+                <p className="text-secondary">{feature.description}</p>
               </div>
-              <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
-              <p className="text-secondary">{feature.description}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section className="py-24 px-6 bg-surface">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+            <div className="flex-1">
+              <h2 className="text-5xl md:text-6xl font-bold mb-8 text-left">
+                Run the<br />numboors.
+              </h2>
+            </div>
+            <div className="flex-1">
+              <div className="glass p-8 rounded-2xl rotate-2 hover:rotate-0 transition-all duration-300">
+                <div className="text-left space-y-4">
+                  <div className="border-b-2 border-secondary pb-4">
+                    <p className="text-lg font-medium">Here are the maths:</p>
+                  </div>
+                  <div className="space-y-2 py-4">
+                    <p>1 $rug = 1 $myr</p>
+                    <p>1 RDAO = 1800 $rug</p>
+                    <p>1 standard Genesis NFT ~ 4k $rug</p>
+                    <p>1 scarce Genesis NFT ~ 5.5k $rug</p>
+                  </div>
+                  <div className="pt-4 flex items-center gap-4">
+                    <div className="w-12 h-12 bg-blue-500 rounded-full"></div>
+                    <p>Days since last rug = 0</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 
