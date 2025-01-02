@@ -10,17 +10,6 @@ const FAQ = () => {
             <p className="text-lg text-secondary">
               FAQ directly from the <a href="https://discord.gg/myriadmarkets" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Myriad Discord</a>
             </p>
-            <div className="flex gap-4 justify-center mt-6">
-              <button className="px-6 py-2 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors">
-                About the company
-              </button>
-              <button className="px-6 py-2 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors">
-                Contact support
-              </button>
-              <button className="px-6 py-2 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors">
-                Visit help center
-              </button>
-            </div>
           </div>
 
           <Accordion type="single" collapsible className="space-y-4">
