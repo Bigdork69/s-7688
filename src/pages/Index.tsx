@@ -5,6 +5,7 @@ import Stats from "../components/Stats";
 import Footer from "../components/Footer";
 import LiveFeed from "../components/LiveFeed";
 import FAQ from "../components/FAQ";
+import QuoteSection from "../components/QuoteSection";
 
 const Index = () => {
   return (
@@ -13,6 +14,7 @@ const Index = () => {
       <Hero />
       <Features />
       <Stats />
+      <QuoteSection />
 
       <div className="py-24 bg-gradient-to-br from-primary/5 to-primary/10">
         <div className="container mx-auto px-4">
