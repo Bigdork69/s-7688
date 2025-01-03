@@ -1,6 +1,4 @@
-import { memo } from 'react';
-
-const QuoteSection = memo(() => {
+const QuoteSection = () => {
   return (
     <section className="py-24 bg-surface">
       <div className="container mx-auto px-4">
@@ -28,16 +26,12 @@ const QuoteSection = memo(() => {
               src="/lovable-uploads/c20c59d5-ef3b-43ae-b907-a3a63f8dd3f1.png"
               alt="The Hearing Things meme"
               className="w-full h-full object-contain"
-              loading="lazy"
-              decoding="async"
             />
           </div>
         </div>
       </div>
     </section>
   );
-});
-
-QuoteSection.displayName = 'QuoteSection';
+};
 
 export default QuoteSection;

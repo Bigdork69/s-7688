@@ -1,5 +1,3 @@
-import { memo } from 'react';
-
 const features = [
   {
     number: "1",
@@ -21,9 +19,9 @@ const features = [
     title: "Not Just Another Copycat",
     description: "Myriad isn't trying to mimic Polymarket—it's a completely different product with a unique approach. The foundation was built long before Polymarket gained traction, and the future shines bright because of that early groundwork."
   }
-] as const;
+];
 
-const Features = memo(() => {
+const Features = () => {
   return (
     <>
       <section id="features" className="py-24 px-6 bg-primary text-white">
@@ -41,9 +39,9 @@ const Features = memo(() => {
           </h2>
           
           <div className="grid md:grid-cols-4 gap-8">
-            {features.map((feature) => (
+            {features.map((feature, index) => (
               <div
-                key={feature.number}
+                key={index}
                 className="glass p-8 rounded-2xl hover:bg-opacity-20 transition-all duration-300 flex flex-col items-center text-center"
               >
                 <div className="w-24 h-24 rounded-full bg-white flex items-center justify-center mb-6">
@@ -71,8 +69,6 @@ const Features = memo(() => {
                   src="/lovable-uploads/88c556c6-467a-4724-9b1c-bc49e67fd4ad.png" 
                   alt="Myriad maths notebook" 
                   className="w-full h-auto max-w-[600px] mx-auto"
-                  loading="lazy"
-                  decoding="async"
                 />
               </div>
             </div>
@@ -81,8 +77,6 @@ const Features = memo(() => {
       </section>
     </>
   );
-});
-
-Features.displayName = 'Features';
+};
 
 export default Features;

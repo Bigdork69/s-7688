@@ -1,6 +1,4 @@
-import { memo } from 'react';
-
-const Hero = memo(() => {
+const Hero = () => {
   return (
     <div className="relative min-h-screen flex items-center bg-white">
       <div className="container mx-auto px-6 py-16 flex flex-col lg:flex-row items-center gap-12">
@@ -16,8 +14,6 @@ const Hero = memo(() => {
                     src="/lovable-uploads/0ce138c5-ae64-42d0-bb9a-8d724d03f725.png" 
                     alt="Twitter post about Myriad alpha"
                     className="w-full h-auto object-contain"
-                    loading="eager" // Load immediately as it's above the fold
-                    decoding="async"
                     style={{ imageRendering: 'crisp-edges' }}
                   />
                 </div>
@@ -50,8 +46,6 @@ const Hero = memo(() => {
       </div>
     </div>
   );
-});
-
-Hero.displayName = 'Hero';
+};
 
 export default Hero;
