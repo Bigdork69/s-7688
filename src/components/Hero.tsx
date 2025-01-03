@@ -32,7 +32,7 @@ const Hero = () => {
           <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6 text-[#141413] flex flex-col">
             <span>GMYRIAD</span>
             <span>No More Small Shit</span>
-            <span>Scroll Down For Alpha</span>
+            <span>Scroll Down For Alpha 👇</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8">
             *The tweet blew up so much we created a website to spread the word
