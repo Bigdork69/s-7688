@@ -18,12 +18,22 @@ const Index = () => {
 
       <div className="py-24 bg-gradient-to-br from-primary/5 to-primary/10">
         <div className="container mx-auto px-4">
+          {/* Mobile image - shown only on small screens */}
+          <div className="block md:hidden mb-8">
+            <img 
+              src="/lovable-uploads/cce4c619-6b67-45ed-8d17-a3301100eacd.png"
+              alt="Robot circuit board illustration"
+              className="w-full h-auto"
+            />
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div className="glass rounded-3xl shadow-xl p-8 transform rotate-1">
               <LiveFeed />
             </div>
 
-            <div className="space-y-8">
+            {/* Desktop/tablet image - hidden on mobile */}
+            <div className="hidden md:block space-y-8">
               <img 
                 src="/lovable-uploads/cce4c619-6b67-45ed-8d17-a3301100eacd.png"
                 alt="Robot circuit board illustration"
