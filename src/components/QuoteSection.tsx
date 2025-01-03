@@ -21,7 +21,7 @@ const QuoteSection = () => {
             </div>
           </div>
 
-          <div className="relative aspect-square bg-gray-100 rounded-lg overflow-hidden">
+          <div className="relative aspect-square overflow-hidden">
             <img
               src="/lovable-uploads/c20c59d5-ef3b-43ae-b907-a3a63f8dd3f1.png"
               alt="The Hearing Things meme"
