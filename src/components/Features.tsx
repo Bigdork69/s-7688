@@ -26,9 +26,9 @@ const features = [
 const Features = memo(() => {
   return (
     <>
-      <section id="features" className="py-24 px-6 bg-primary text-white">
+      <section id="features" className="py-12 sm:py-24 px-4 sm:px-6 bg-primary text-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-white">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-16 text-white">
             The Alpha According to{" "}
             <a 
               href="https://x.com/tylerdurdeth" 
@@ -40,33 +40,33 @@ const Features = memo(() => {
             </a>
           </h2>
           
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {features.map((feature) => (
               <div
                 key={feature.number}
-                className="glass p-8 rounded-2xl hover:bg-opacity-20 transition-all duration-300 flex flex-col items-center text-center"
+                className="glass p-6 sm:p-8 rounded-2xl hover:bg-opacity-20 transition-all duration-300 flex flex-col items-center text-center"
               >
-                <div className="w-24 h-24 rounded-full bg-white flex items-center justify-center mb-6">
-                  <span className="text-4xl font-bold text-primary">{feature.number}</span>
+                <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-full bg-white flex items-center justify-center mb-4 sm:mb-6">
+                  <span className="text-3xl sm:text-4xl font-bold text-primary">{feature.number}</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-4 text-white">{feature.title}</h3>
-                <p className="text-gray-300">{feature.description}</p>
+                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-white">{feature.title}</h3>
+                <p className="text-sm sm:text-base text-gray-300">{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-surface">
+      <section className="py-12 sm:py-24 px-4 sm:px-6 bg-surface">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 sm:gap-12">
             <div className="flex-1">
-              <h2 className="text-6xl md:text-7xl font-bold mb-8 text-left text-primary">
+              <h2 className="text-4xl sm:text-6xl md:text-7xl font-bold mb-6 sm:mb-8 text-left text-primary">
                 Run the<br />numboooors.
               </h2>
             </div>
-            <div className="flex-1">
-              <div className="glass p-12 rounded-2xl rotate-2 hover:rotate-0 transition-all duration-300">
+            <div className="flex-1 w-full">
+              <div className="glass p-6 sm:p-12 rounded-2xl rotate-2 hover:rotate-0 transition-all duration-300">
                 <img 
                   src="/lovable-uploads/88c556c6-467a-4724-9b1c-bc49e67fd4ad.png" 
                   alt="Myriad maths notebook" 

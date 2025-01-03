@@ -38,14 +38,14 @@ const LiveFeed = memo(() => {
   return (
     <Card className="w-full max-w-4xl mx-auto bg-[#1A1F2C] text-white border-none shadow-xl">
       <CardHeader className="text-center pb-2">
-        <h2 className="text-3xl font-bold mb-2 text-white">Rug Radio Live Price (updated every hour)</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-white">Rug Radio Live Price (updated every hour)</h2>
         <div className="space-y-2">
           {data && (
             <>
-              <p className="text-2xl font-bold">
+              <p className="text-xl sm:text-2xl font-bold">
                 Ξ {formatPrice(data.price.amount.native)} ETH
               </p>
-              <p className="text-xl text-gray-300">
+              <p className="text-lg sm:text-xl text-gray-300">
                 ${formatPrice(data.price.amount.usd)} USD
               </p>
             </>
@@ -65,7 +65,7 @@ const LiveFeed = memo(() => {
         ) : data ? (
           <div className="flex justify-center">
             <Button 
-              className="bg-[#D77F2F] hover:bg-[#C16E2A] text-white px-8 rounded-full flex items-center gap-2"
+              className="bg-[#D77F2F] hover:bg-[#C16E2A] text-white px-6 sm:px-8 py-2 rounded-full flex items-center gap-2 text-sm sm:text-base"
               onClick={() => window.open('https://blur.io/collection/ruggenesis-nft', '_blank')}
             >
               Rug Me Daddy <ExternalLink className="w-4 h-4" />
