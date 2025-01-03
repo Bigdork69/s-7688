@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useEffect } from "react";
+import { useCallback, memo } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -15,30 +15,25 @@ interface FloorPriceData {
   };
 }
 
-const LiveFeed = () => {
-  const fetchFloorPrice = async (): Promise<FloorPriceData> => {
+const LiveFeed = memo(() => {
+  const fetchFloorPrice = useCallback(async (): Promise<FloorPriceData> => {
     const { data, error } = await supabase.functions.invoke('getFloorPrice');
     if (error) throw error;
     return data;
-  };
+  }, []);
 
   const { data, error, isLoading } = useQuery({
     queryKey: ['floorPrice'],
     queryFn: fetchFloorPrice,
-    refetchInterval: 3600000, // Refetch every hour (3600000 milliseconds)
+    refetchInterval: 3600000,
   });
 
-  useEffect(() => {
-    console.log('Floor price data:', data);
-    console.log('Error:', error);
-  }, [data, error]);
-
-  const formatPrice = (price: number) => {
+  const formatPrice = useCallback((price: number) => {
     return new Intl.NumberFormat('en-US', {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     }).format(price);
-  };
+  }, []);
 
   return (
     <Card className="w-full max-w-4xl mx-auto bg-[#1A1F2C] text-white border-none shadow-xl">
@@ -84,6 +79,8 @@ const LiveFeed = () => {
       </CardContent>
     </Card>
   );
-};
+});
+
+LiveFeed.displayName = 'LiveFeed';
 
 export default LiveFeed;
