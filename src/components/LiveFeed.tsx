@@ -38,7 +38,7 @@ const LiveFeed = memo(() => {
   return (
     <Card className="w-full max-w-4xl mx-auto bg-[#1A1F2C] text-white border-none shadow-xl">
       <CardHeader className="text-center pb-2">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-white">Rug Radio Live Price (updated every hour)</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-white">RugGenesis Live Price (updated every hour)</h2>
         <div className="space-y-2">
           {data && (
             <>
