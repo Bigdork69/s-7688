@@ -60,7 +60,7 @@ const Features = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="flex-1">
               <h2 className="text-6xl md:text-7xl font-bold mb-8 text-left text-primary">
-                Run the<br />numboors.
+                Run the<br />numboooors.
               </h2>
             </div>
             <div className="flex-1">
