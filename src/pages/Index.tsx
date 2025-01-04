@@ -7,6 +7,7 @@ import LiveFeed from "../components/LiveFeed"
 import FAQ from "../components/FAQ"
 import QuoteSection from "../components/QuoteSection"
 import ClaimChecker from "../components/ClaimChecker"
+import TwitterThread from "../components/TwitterThread"
 
 const Index = () => {
   return (
@@ -36,6 +37,7 @@ const Index = () => {
         </div>
       </div>
 
+      <TwitterThread />
       <FAQ />
       <Footer />
     </div>
