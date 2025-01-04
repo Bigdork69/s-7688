@@ -11,6 +11,7 @@ const KeyLinks = () => {
     {
       title: "Myriad Discord",
       url: "https://discord.gg/myriadmarkets",
+      image: "/lovable-uploads/f4ef25f5-9409-408d-b307-0740f382f209.png"
     },
     {
       title: "Rug Claim Site",
