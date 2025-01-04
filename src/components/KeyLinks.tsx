@@ -21,6 +21,7 @@ const KeyLinks = () => {
     {
       title: "Follow Myriad on X",
       url: "https://x.com/MyriadMarkets",
+      image: "/lovable-uploads/55b2dcf6-e075-4aa8-9ab4-6da467dc6414.png"
     },
     {
       title: "Follow Farokh on X",
