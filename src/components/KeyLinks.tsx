@@ -37,12 +37,12 @@ const KeyLinks = () => {
   ];
 
   return (
-    <div className="py-24 bg-surface">
+    <div className="py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-4">Key Links</h2>
-            <p className="text-lg text-gray-400">
+            <h2 className="text-4xl font-bold text-primary mb-4">Key Links</h2>
+            <p className="text-lg text-secondary">
               Discover more about our products and community
             </p>
           </div>
