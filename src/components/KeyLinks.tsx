@@ -4,46 +4,39 @@ import { ExternalLink } from "lucide-react";
 const KeyLinks = () => {
   const links = [
     {
-      title: "OLIPOP Is Now the Most Popular Root Beer in the US",
-      image: "/lovable-uploads/ffc70825-468a-4b58-a471-3516b9ccb59f.png",
-      url: "https://www.drinkolipop.com/blog/olipop-most-popular-root-beer",
+      title: "Myriad Market",
+      url: "https://beta.myriad.markets/",
     },
     {
-      title: "Drink Companies with Celebrity Investors",
-      image: "/lovable-uploads/ffc70825-468a-4b58-a471-3516b9ccb59f.png",
-      url: "https://www.drinkolipop.com/blog/celebrity-investors",
+      title: "Myriad Discord",
+      url: "https://discord.gg/myriadmarkets",
     },
     {
-      title: "We Talked All Things Fitness and Wellness With Camila Cabello",
-      image: "/lovable-uploads/ffc70825-468a-4b58-a471-3516b9ccb59f.png",
-      url: "https://www.drinkolipop.com/blog/camila-cabello-interview",
+      title: "Rug Claim Site",
+      url: "https://claim.rug.fm/",
     },
     {
-      title: "Shop OLIPOP 🥤",
-      url: "https://www.drinkolipop.com/shop",
+      title: "Follow Myriad on X",
+      url: "https://x.com/MyriadMarkets",
     },
     {
-      title: "Shop us at Walmart 🛒",
-      url: "https://www.walmart.com/browse/olipop",
+      title: "Follow Farokh on X",
+      url: "https://x.com/farokh",
     },
     {
-      title: "Follow us on TikTok 📹",
-      url: "https://www.tiktok.com/@drinkolipop",
-    },
-    {
-      title: "Get cash back for in store purchases 🤑",
-      url: "https://www.drinkolipop.com/rewards",
+      title: "Follow Tyler Durdeth on X",
+      url: "https://x.com/tylerdurdeth",
     },
   ];
 
   return (
-    <div className="py-24 bg-white">
+    <div className="py-24 bg-black">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-primary mb-4">Key Links</h2>
-            <p className="text-lg text-secondary">
-              Discover more about our products and community
+            <h2 className="text-4xl font-bold text-white mb-4">Key Links</h2>
+            <p className="text-lg text-gray-400">
+              Discover more about our community
             </p>
           </div>
 
@@ -56,18 +49,9 @@ const KeyLinks = () => {
                 rel="noopener noreferrer"
                 className="block transition-transform hover:scale-[1.02]"
               >
-                <Card className="p-4 flex items-center justify-between bg-white hover:bg-gray-50">
+                <Card className="p-4 flex items-center justify-between bg-gray-900 hover:bg-gray-800 border-gray-700">
                   <div className="flex items-center gap-4">
-                    {link.image && (
-                      <div className="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
-                        <img
-                          src={link.image}
-                          alt=""
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    )}
-                    <span className="text-lg font-medium text-primary">
+                    <span className="text-lg font-medium text-white">
                       {link.title}
                     </span>
                   </div>
