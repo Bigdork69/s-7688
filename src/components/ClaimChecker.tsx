@@ -5,8 +5,8 @@ import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { useToast } from './ui/use-toast'
 
-// The actual RUG claim contract address
-const RUG_CONTRACT_ADDRESS = '0x53f80ae549c4e8037c3b8fc31b03339447349b6f'
+// The actual RUG claim contract address (updated to the correct one)
+const RUG_CONTRACT_ADDRESS = '0x4f41d10f7e67fd16bde916b4a6c3f015e5704a7c'
 const RUG_ABI = [
   {
     "inputs": [{"internalType": "uint256", "name": "tokenId", "type": "uint256"}],
