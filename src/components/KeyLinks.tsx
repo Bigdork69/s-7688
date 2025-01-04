@@ -34,9 +34,9 @@ const KeyLinks = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-4">Key Links</h2>
+            <h2 className="text-4xl font-bold text-white mb-4">Important Links</h2>
             <p className="text-lg text-gray-400">
-              Discover more about our community
+              Dive deeper into Myriad below
             </p>
           </div>
 
