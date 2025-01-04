@@ -19,7 +19,7 @@ const Index = () => {
       <QuoteSection />
 
       {/* Combined Live Feed and Twitter Thread Section */}
-      <div className="py-24 bg-gradient-to-br from-primary/5 to-primary/10">
+      <div className="py-24 bg-black bg-opacity-95">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Live Feed Column */}
