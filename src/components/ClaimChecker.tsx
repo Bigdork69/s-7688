@@ -10,9 +10,22 @@ const ClaimChecker = () => {
         </div>
         
         <div className="max-w-[1000px] mx-auto">
-          <div className="relative w-full">
+          {/* Mobile version - direct iframe */}
+          <div className="block sm:hidden w-full h-[70vh] bg-white rounded-lg overflow-hidden">
+            <iframe 
+              src="https://claim.rug.fm/CheckNfts" 
+              width="100%" 
+              height="100%" 
+              className="w-full h-full"
+              style={{ border: 'none' }}
+              title="RUG Claim Checker"
+            />
+          </div>
+
+          {/* Desktop version - laptop design */}
+          <div className="hidden sm:block relative w-full">
             {/* Laptop lid */}
-            <div className="relative w-full aspect-[16/6] sm:aspect-[16/10] bg-gray-800 rounded-t-lg p-1 sm:p-2">
+            <div className="relative w-full aspect-[16/10] bg-gray-800 rounded-t-lg p-2">
               {/* Screen */}
               <div className="w-full h-full bg-white rounded-sm flex items-center justify-center overflow-hidden">
                 <div className="w-full h-[calc(100%+64px)] relative">
@@ -28,9 +41,9 @@ const ClaimChecker = () => {
               </div>
             </div>
             {/* Laptop base */}
-            <div className="relative w-full h-[15px] sm:h-[30px] bg-gray-700 rounded-b-lg">
+            <div className="relative w-full h-[30px] bg-gray-700 rounded-b-lg">
               {/* Touchpad area */}
-              <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[40px] sm:w-[100px] h-[2px] sm:h-[5px] bg-gray-600 rounded-b-lg"></div>
+              <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[100px] h-[5px] bg-gray-600 rounded-b-lg"></div>
             </div>
           </div>
         </div>
