@@ -22,7 +22,7 @@ const ClaimChecker = () => {
         {/* Mobile version - scrollable iframe container */}
         <div className="block sm:hidden w-full h-[85vh] bg-white rounded-lg">
           <div className="w-full h-full overflow-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-track]:bg-gray-100">
-            <div className="min-w-[800px] min-h-[600px]">
+            <div className="min-w-[800px] min-h-[500px]">
               <iframe 
                 src="https://claim.rug.fm/CheckNfts" 
                 width="100%" 
