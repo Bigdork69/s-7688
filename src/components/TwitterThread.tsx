@@ -29,16 +29,16 @@ const TwitterThread = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-primary mb-4">The $RUG Story</h2>
+    <section className="py-12 bg-white">
+      <div className="container mx-auto px-4 max-w-4xl">
+        <div className="text-center mb-6">
+          <h2 className="text-3xl font-bold text-primary mb-2">The $RUG Story</h2>
           <p className="text-lg text-secondary">
             A comprehensive thread by <a href="https://twitter.com/tylerdurdeth" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">@tylerdurdeth</a>
           </p>
         </div>
         
-        <ScrollArea className="h-[800px] w-full rounded-md border p-6">
+        <ScrollArea className="h-[600px] w-full rounded-md border p-4 bg-gray-50">
           <div className="space-y-4">
             {tweets.map((tweet, index) => (
               <div key={index} dangerouslySetInnerHTML={{ __html: tweet }} />
