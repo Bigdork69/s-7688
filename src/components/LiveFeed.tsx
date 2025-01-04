@@ -37,7 +37,7 @@ const LiveFeed = memo(() => {
 
   return (
     <div>
-      <h2 className="text-4xl font-bold text-center mb-12 text-primary">
+      <h2 className="text-4xl font-bold text-center mb-12 text-white">
         What is the current RugGenesis Floor Price?
       </h2>
       <Card className="w-full max-w-4xl mx-auto bg-[#1A1F2C] text-white border-none shadow-xl">
@@ -46,7 +46,7 @@ const LiveFeed = memo(() => {
           <div className="space-y-2">
             {data && (
               <>
-                <p className="text-xl sm:text-2xl font-bold">
+                <p className="text-xl sm:text-2xl font-bold text-white">
                   Ξ {formatPrice(data.price.amount.native)} ETH
                 </p>
                 <p className="text-lg sm:text-xl text-gray-300">
@@ -76,7 +76,7 @@ const LiveFeed = memo(() => {
               </Button>
             </div>
           ) : (
-            <div className="text-center py-4 text-muted">
+            <div className="text-center py-4 text-white">
               Loading floor price...
             </div>
           )}
