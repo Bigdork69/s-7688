@@ -6,6 +6,11 @@ import Footer from "../components/Footer";
 import LiveFeed from "../components/LiveFeed";
 import FAQ from "../components/FAQ";
 import QuoteSection from "../components/QuoteSection";
+import ClaimDashboard from "../components/ClaimDashboard";
+import { configureWeb3Modal } from "../lib/web3modal";
+
+// Configure Web3Modal
+configureWeb3Modal();
 
 const Index = () => {
   return (
@@ -41,6 +46,12 @@ const Index = () => {
               />
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="py-24 bg-surface">
+        <div className="container mx-auto px-4">
+          <ClaimDashboard />
         </div>
       </div>
 
