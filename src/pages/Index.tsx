@@ -8,6 +8,7 @@ import FAQ from "../components/FAQ"
 import QuoteSection from "../components/QuoteSection"
 import ClaimChecker from "../components/ClaimChecker"
 import TwitterThread from "../components/TwitterThread"
+import KeyLinks from "../components/KeyLinks"
 
 const Index = () => {
   return (
@@ -43,6 +44,7 @@ const Index = () => {
       </div>
 
       <FAQ />
+      <KeyLinks />
       <Footer />
     </div>
   )
