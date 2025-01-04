@@ -29,7 +29,7 @@ export default {
         accent: "#C4C3BB",
         muted: "#A3A299",
         highlight: "#F2FF44",
-        surface: "#FAFAF8",
+        surface: "#000000",
       },
       keyframes: {
         "accordion-down": {
