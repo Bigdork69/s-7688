@@ -68,7 +68,7 @@ const Features = memo(() => {
             <div className="flex-1 w-full">
               <div className="glass p-6 sm:p-12 rounded-2xl rotate-2 hover:rotate-0 transition-all duration-300">
                 <img 
-                  src="/lovable-uploads/88c556c6-467a-4724-9b1c-bc49e67fd4ad.png" 
+                  src="/lovable-uploads/f667628e-f3ba-4593-93ee-dbe9e1f80c45.png" 
                   alt="Myriad maths notebook" 
                   className="w-full h-auto max-w-[600px] mx-auto"
                   loading="lazy"
