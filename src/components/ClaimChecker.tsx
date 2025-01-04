@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { useAccount, useReadContract } from 'wagmi'
+import { createPublicClient, http } from 'viem'
+import { mainnet } from 'viem/chains'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { useToast } from './ui/use-toast'
@@ -15,22 +16,18 @@ const RUG_ABI = [
   }
 ]
 
+const publicClient = createPublicClient({
+  chain: mainnet,
+  transport: http()
+})
+
 export default function ClaimChecker() {
   const [tokenId, setTokenId] = useState('')
-  const { address, isConnected } = useAccount()
+  const [claimAmount, setClaimAmount] = useState<bigint | null>(null)
+  const [isLoading, setIsLoading] = useState(false)
   const { toast } = useToast()
 
-  const { data: claimAmount, error } = useReadContract({
-    address: RUG_CONTRACT_ADDRESS,
-    abi: RUG_ABI,
-    functionName: 'getClaimAmount',
-    args: tokenId ? [BigInt(tokenId)] : undefined,
-    query: {
-      enabled: Boolean(tokenId && !isNaN(Number(tokenId)))
-    }
-  })
-
-  const handleCheck = () => {
+  const handleCheck = async () => {
     if (!tokenId || isNaN(Number(tokenId))) {
       toast({
         title: "Invalid Token ID",
@@ -40,13 +37,24 @@ export default function ClaimChecker() {
       return
     }
 
-    if (!isConnected) {
+    setIsLoading(true)
+    try {
+      const amount = await publicClient.readContract({
+        address: RUG_CONTRACT_ADDRESS,
+        abi: RUG_ABI,
+        functionName: 'getClaimAmount',
+        args: [BigInt(tokenId)]
+      })
+      setClaimAmount(amount as bigint)
+    } catch (error) {
+      console.error('Error checking claim amount:', error)
       toast({
-        title: "Connect Wallet",
-        description: "Please connect your wallet first",
+        title: "Error",
+        description: "Failed to check claim amount. Please try again.",
         variant: "destructive"
       })
-      return
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -72,22 +80,16 @@ export default function ClaimChecker() {
         <Button 
           onClick={handleCheck}
           className="w-full"
-          disabled={!isConnected}
+          disabled={isLoading}
         >
-          {isConnected ? 'Check Claim Amount' : 'Connect Wallet to Check'}
+          {isLoading ? 'Checking...' : 'Check Claim Amount'}
         </Button>
 
-        {claimAmount && (
+        {claimAmount !== null && (
           <div className="mt-4 p-4 bg-primary/10 rounded-lg">
             <p className="text-lg font-semibold">
               Claimable Amount: {Number(claimAmount) / 1e18} RUG
             </p>
-          </div>
-        )}
-
-        {error && (
-          <div className="mt-4 p-4 bg-destructive/10 text-destructive rounded-lg">
-            <p>Error checking claim amount. Please try again.</p>
           </div>
         )}
       </div>
