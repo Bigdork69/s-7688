@@ -7,17 +7,19 @@ import LiveFeed from "../components/LiveFeed";
 import FAQ from "../components/FAQ";
 import QuoteSection from "../components/QuoteSection";
 import ClaimDashboard from "../components/ClaimDashboard";
-import { configureWeb3Modal } from "../lib/web3modal";
+import { configureWeb3Modal, wagmiConfig } from "../lib/web3modal";
 import { WagmiProvider } from 'wagmi';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-// Configure Web3Modal and create QueryClient
+// Configure Web3Modal
 configureWeb3Modal();
+
+// Create a client
 const queryClient = new QueryClient();
 
 const Index = () => {
   return (
-    <WagmiProvider>
+    <WagmiProvider config={wagmiConfig}>
       <QueryClientProvider client={queryClient}>
         <div className="min-h-screen">
           <Navbar />

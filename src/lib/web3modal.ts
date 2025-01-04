@@ -1,7 +1,7 @@
 import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react';
 import { mainnet } from 'viem/chains';
 
-// Replace with your WalletConnect Project ID
+// Get your projectId at https://cloud.walletconnect.com
 const projectId = 'YOUR_WALLETCONNECT_PROJECT_ID';
 
 const metadata = {
@@ -11,12 +11,16 @@ const metadata = {
   icons: ['https://avatars.githubusercontent.com/u/37784886']
 };
 
-export const configureWeb3Modal = () => {
-  const wagmiConfig = defaultWagmiConfig({
-    projectId,
-    metadata,
-    chains: [mainnet],
-  });
+const chains = [mainnet] as const;
 
-  createWeb3Modal({ wagmiConfig, projectId });
+export const wagmiConfig = defaultWagmiConfig({
+  chains,
+  projectId,
+  metadata,
+});
+
+createWeb3Modal({ wagmiConfig, projectId, chains });
+
+export const configureWeb3Modal = () => {
+  // Configuration is now handled through the exported wagmiConfig
 };
