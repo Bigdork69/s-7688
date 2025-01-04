@@ -9,6 +9,11 @@ const KeyLinks = () => {
       image: "/lovable-uploads/d416a15c-f682-4df2-b33b-7ae421506006.png"
     },
     {
+      title: "Rug Radio Wiki",
+      url: "https://wiki.rug.fm/rug-radio",
+      image: "/lovable-uploads/d825f6e4-09e8-41da-853a-2cc1d061f5b6.png"
+    },
+    {
       title: "Myriad Discord",
       url: "https://discord.gg/myriadmarkets",
       image: "/lovable-uploads/f4ef25f5-9409-408d-b307-0740f382f209.png"
