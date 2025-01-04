@@ -10,7 +10,7 @@ const RUG_CONTRACT_ADDRESS = '0x53f80ae549c4e8037c3b8fc31b03339447349b6f'
 const RUG_ABI = [
   {
     "inputs": [{"internalType": "uint256", "name": "tokenId", "type": "uint256"}],
-    "name": "getClaimAmount",
+    "name": "claimAmount",
     "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
     "stateMutability": "view",
     "type": "function"
@@ -40,12 +40,14 @@ export default function ClaimChecker() {
 
     setIsLoading(true)
     try {
+      console.log('Checking claim amount for token:', tokenId)
       const amount = await publicClient.readContract({
         address: RUG_CONTRACT_ADDRESS,
         abi: RUG_ABI,
-        functionName: 'getClaimAmount',
+        functionName: 'claimAmount',
         args: [BigInt(tokenId)]
       })
+      console.log('Claim amount received:', amount)
       setClaimAmount(amount as bigint)
     } catch (error) {
       console.error('Error checking claim amount:', error)
