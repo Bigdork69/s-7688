@@ -34,6 +34,11 @@ const KeyLinks = () => {
       image: "/lovable-uploads/1984cd1d-b870-452e-be31-69d997a92020.png"
     },
     {
+      title: "Follow Loxley on X",
+      url: "https://x.com/Loxley_eth",
+      image: "/lovable-uploads/fa952983-7ac9-4ada-bcfe-86e85a49f554.png"
+    },
+    {
       title: "Follow Tyler Durdeth on X",
       url: "https://x.com/tylerdurdeth",
       image: "/lovable-uploads/71725fad-85e0-462f-b5cd-0bc1d859d54e.png"
