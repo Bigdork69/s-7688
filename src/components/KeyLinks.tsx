@@ -31,6 +31,7 @@ const KeyLinks = () => {
     {
       title: "Follow Tyler Durdeth on X",
       url: "https://x.com/tylerdurdeth",
+      image: "/lovable-uploads/71725fad-85e0-462f-b5cd-0bc1d859d54e.png"
     },
   ];
 
