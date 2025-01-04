@@ -5,7 +5,7 @@ import { useWeb3Modal } from '@web3modal/wagmi/react';
 import { useToast } from "@/hooks/use-toast";
 
 // RUG token claim contract address
-const RUG_CLAIM_CONTRACT = "0x123..."; // Replace with actual contract address
+const RUG_CLAIM_CONTRACT = "0x123..." as const; // Replace with actual contract address
 
 const ClaimDashboard = () => {
   const { open } = useWeb3Modal();
@@ -15,18 +15,18 @@ const ClaimDashboard = () => {
   // Read claim status from contract
   const { data: claimStatus, isError, isLoading } = useContractRead({
     address: RUG_CLAIM_CONTRACT,
-    abi: [
-      {
-        name: "claimStatus",
-        type: "function",
-        stateMutability: "view",
-        inputs: [{ name: "account", type: "address" }],
-        outputs: [{ name: "", type: "bool" }],
-      },
-    ],
+    abi: [{
+      name: "claimStatus",
+      type: "function",
+      stateMutability: "view",
+      inputs: [{ name: "account", type: "address" }],
+      outputs: [{ name: "", type: "bool" }],
+    }],
     functionName: "claimStatus",
-    args: [address as `0x${string}`],
-    enabled: isConnected,
+    args: address ? [address] : undefined,
+    query: {
+      enabled: Boolean(address),
+    }
   });
 
   const handleConnect = async () => {

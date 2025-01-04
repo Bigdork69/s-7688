@@ -1,19 +1,22 @@
 import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react';
-import { mainnet } from 'wagmi/chains';
+import { mainnet } from 'viem/chains';
 
-const projectId = 'YOUR_WALLETCONNECT_PROJECT_ID'; // You'll need to get this from WalletConnect
+// Replace with your WalletConnect Project ID
+const projectId = 'YOUR_WALLETCONNECT_PROJECT_ID';
 
-// 2. Create wagmiConfig
 const metadata = {
   name: 'RugGenesis',
   description: 'Check your RUG token claim status',
-  url: 'https://your-website.com', // Replace with your website
+  url: 'https://your-website.com',
   icons: ['https://avatars.githubusercontent.com/u/37784886']
 };
 
 export const configureWeb3Modal = () => {
-  const chains = [mainnet];
-  const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata });
+  const wagmiConfig = defaultWagmiConfig({
+    projectId,
+    metadata,
+    chains: [mainnet],
+  });
 
-  createWeb3Modal({ wagmiConfig, projectId, chains });
+  createWeb3Modal({ wagmiConfig, projectId });
 };
