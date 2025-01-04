@@ -6,6 +6,7 @@ const KeyLinks = () => {
     {
       title: "Myriad Market",
       url: "https://beta.myriad.markets/",
+      image: "/lovable-uploads/d416a15c-f682-4df2-b33b-7ae421506006.png"
     },
     {
       title: "Myriad Discord",
@@ -51,6 +52,13 @@ const KeyLinks = () => {
               >
                 <Card className="p-4 flex items-center justify-between bg-gray-900 hover:bg-gray-800 border-gray-700">
                   <div className="flex items-center gap-4">
+                    {link.image && (
+                      <img 
+                        src={link.image} 
+                        alt={link.title}
+                        className="w-8 h-8 object-contain"
+                      />
+                    )}
                     <span className="text-lg font-medium text-white">
                       {link.title}
                     </span>
