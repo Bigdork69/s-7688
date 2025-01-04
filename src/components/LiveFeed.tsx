@@ -40,8 +40,8 @@ const LiveFeed = memo(() => {
       <h2 className="text-4xl font-bold text-center mb-12 text-white">
         What is the current RugGenesis Floor Price?
       </h2>
-      <Card className="w-full max-w-4xl mx-auto bg-[#1A1F2C] text-white border-none shadow-xl">
-        <CardHeader className="text-center pb-2">
+      <Card className="w-full max-w-4xl mx-auto bg-[#1A1F2C]/90 backdrop-blur-sm text-white border-2 border-white/10 shadow-2xl">
+        <CardHeader className="text-center pb-2 space-y-4">
           <h3 className="text-2xl sm:text-3xl font-bold mb-2 text-white">RugGenesis Live Price (updated every hour)</h3>
           <div className="space-y-2">
             {data && (
