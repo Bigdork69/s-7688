@@ -26,6 +26,7 @@ const KeyLinks = () => {
     {
       title: "Follow Farokh on X",
       url: "https://x.com/farokh",
+      image: "/lovable-uploads/1984cd1d-b870-452e-be31-69d997a92020.png"
     },
     {
       title: "Follow Tyler Durdeth on X",
