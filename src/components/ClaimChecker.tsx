@@ -19,16 +19,20 @@ const ClaimChecker = () => {
           </p>
         </div>
         
-        {/* Mobile version - direct iframe */}
-        <div className="block sm:hidden w-full h-[70vh] bg-white rounded-lg overflow-hidden">
-          <iframe 
-            src="https://claim.rug.fm/CheckNfts" 
-            width="100%" 
-            height="100%" 
-            className="w-full h-full"
-            style={{ border: 'none' }}
-            title="RUG Claim Checker"
-          />
+        {/* Mobile version - scrollable iframe container */}
+        <div className="block sm:hidden w-full h-[70vh] bg-white rounded-lg">
+          <div className="w-full h-full overflow-auto">
+            <div className="min-w-[800px] min-h-[800px]">
+              <iframe 
+                src="https://claim.rug.fm/CheckNfts" 
+                width="100%" 
+                height="100%" 
+                className="w-full h-full"
+                style={{ border: 'none' }}
+                title="RUG Claim Checker"
+              />
+            </div>
+          </div>
         </div>
 
         {/* Desktop version - laptop design */}
