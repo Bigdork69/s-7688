@@ -3,16 +3,16 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/
 const ClaimChecker = () => {
   return (
     <div className="relative min-h-screen flex items-center bg-white">
-      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">How can I check if a RugGenesis still has $Rug to claim?</h2>
-          <p className="text-lg text-gray-600">Drop your Token ID in the box below and click 'Check'</p>
+      <div className="container mx-auto px-4 sm:px-6 py-4 sm:py-16">
+        <div className="text-center mb-6 sm:mb-12">
+          <h2 className="text-2xl sm:text-4xl font-bold mb-2 sm:mb-4">How can I check if a RugGenesis still has $Rug to claim?</h2>
+          <p className="text-base sm:text-lg text-gray-600">Drop your Token ID in the box below and click 'Check'</p>
         </div>
         
         <div className="max-w-[1000px] mx-auto">
           <div className="relative w-full">
             {/* Laptop lid */}
-            <div className="relative w-full aspect-[16/10] bg-gray-800 rounded-t-lg p-2">
+            <div className="relative w-full aspect-[16/8] sm:aspect-[16/10] bg-gray-800 rounded-t-lg p-1 sm:p-2">
               {/* Screen */}
               <div className="w-full h-full bg-white rounded-sm flex items-center justify-center overflow-hidden">
                 <div className="w-full h-[calc(100%+64px)] relative">
@@ -28,9 +28,9 @@ const ClaimChecker = () => {
               </div>
             </div>
             {/* Laptop base */}
-            <div className="relative w-full h-[30px] bg-gray-700 rounded-b-lg">
+            <div className="relative w-full h-[20px] sm:h-[30px] bg-gray-700 rounded-b-lg">
               {/* Touchpad area */}
-              <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[100px] h-[5px] bg-gray-600 rounded-b-lg"></div>
+              <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[60px] sm:w-[100px] h-[3px] sm:h-[5px] bg-gray-600 rounded-b-lg"></div>
             </div>
           </div>
         </div>
