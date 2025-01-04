@@ -31,8 +31,8 @@ const TwitterThread = () => {
   return (
     <div>
       <div className="text-center mb-4">
-        <h3 className="text-2xl font-bold text-primary mb-2">The $RUG Story</h3>
-        <p className="text-sm text-secondary">
+        <h3 className="text-2xl font-bold text-white mb-2">The $RUG Story</h3>
+        <p className="text-sm text-white">
           A comprehensive thread by <a href="https://twitter.com/tylerdurdeth" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">@tylerdurdeth</a>
         </p>
       </div>
