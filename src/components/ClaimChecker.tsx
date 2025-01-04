@@ -15,14 +15,16 @@ const ClaimChecker = () => {
             <div className="relative w-full aspect-[16/10] bg-gray-800 rounded-t-lg p-2">
               {/* Screen */}
               <div className="w-full h-full bg-white rounded-sm flex items-center justify-center overflow-hidden">
-                <iframe 
-                  src="https://claim.rug.fm/CheckNfts" 
-                  width="100%" 
-                  height="100%" 
-                  className="w-full h-full"
-                  style={{ border: 'none' }}
-                  title="RUG Claim Checker"
-                />
+                <div className="w-full h-[calc(100%+64px)] relative">
+                  <iframe 
+                    src="https://claim.rug.fm/CheckNfts" 
+                    width="100%" 
+                    height="100%" 
+                    className="absolute top-[-64px] left-0 w-full h-[calc(100%+64px)]"
+                    style={{ border: 'none' }}
+                    title="RUG Claim Checker"
+                  />
+                </div>
               </div>
             </div>
             {/* Laptop base */}
