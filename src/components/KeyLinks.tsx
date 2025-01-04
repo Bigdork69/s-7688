@@ -16,6 +16,7 @@ const KeyLinks = () => {
     {
       title: "Rug Claim Site",
       url: "https://claim.rug.fm/",
+      image: "/lovable-uploads/083059b6-30e9-4288-b1e7-eef79b6faca4.png"
     },
     {
       title: "Follow Myriad on X",
