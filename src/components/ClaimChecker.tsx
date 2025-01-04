@@ -5,7 +5,7 @@ const ClaimChecker = () => {
     <div className="relative min-h-screen flex items-center bg-white">
       <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">How can i check if a RugGenesis still has $Rug to claim?</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">How can I check if a RugGenesis still has $Rug to claim?</h2>
           <p className="text-lg text-gray-600">Find out how many RUG tokens are left to claim</p>
         </div>
         
