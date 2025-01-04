@@ -29,24 +29,22 @@ const TwitterThread = () => {
   ];
 
   return (
-    <section className="py-12 bg-white">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <div className="text-center mb-6">
-          <h2 className="text-3xl font-bold text-primary mb-2">The $RUG Story</h2>
-          <p className="text-lg text-secondary">
-            A comprehensive thread by <a href="https://twitter.com/tylerdurdeth" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">@tylerdurdeth</a>
-          </p>
-        </div>
-        
-        <ScrollArea className="h-[600px] w-full rounded-md border p-4 bg-gray-50">
-          <div className="space-y-4">
-            {tweets.map((tweet, index) => (
-              <div key={index} dangerouslySetInnerHTML={{ __html: tweet }} />
-            ))}
-          </div>
-        </ScrollArea>
+    <div>
+      <div className="text-center mb-4">
+        <h3 className="text-2xl font-bold text-primary mb-2">The $RUG Story</h3>
+        <p className="text-sm text-secondary">
+          A comprehensive thread by <a href="https://twitter.com/tylerdurdeth" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">@tylerdurdeth</a>
+        </p>
       </div>
-    </section>
+      
+      <ScrollArea className="h-[500px] w-full rounded-md border p-4 bg-white/80">
+        <div className="space-y-4">
+          {tweets.map((tweet, index) => (
+            <div key={index} dangerouslySetInnerHTML={{ __html: tweet }} />
+          ))}
+        </div>
+      </ScrollArea>
+    </div>
   );
 };
 

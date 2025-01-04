@@ -18,14 +18,22 @@ const Index = () => {
       <Stats />
       <QuoteSection />
 
-      {/* Live Feed Section */}
+      {/* Combined Live Feed and Twitter Thread Section */}
       <div className="py-24 bg-gradient-to-br from-primary/5 to-primary/10">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12 text-primary">
             What is the current RugGenesis Floor Price?
           </h2>
-          <div className="glass rounded-3xl shadow-xl p-8 transform rotate-1">
-            <LiveFeed />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Live Feed Column */}
+            <div className="glass rounded-3xl shadow-xl p-8 transform rotate-1">
+              <LiveFeed />
+            </div>
+            
+            {/* Twitter Thread Column */}
+            <div className="glass rounded-3xl shadow-xl p-8 transform -rotate-1">
+              <TwitterThread />
+            </div>
           </div>
         </div>
       </div>
@@ -37,7 +45,6 @@ const Index = () => {
         </div>
       </div>
 
-      <TwitterThread />
       <FAQ />
       <Footer />
     </div>
