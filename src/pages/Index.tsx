@@ -20,20 +20,11 @@ const Index = () => {
       {/* Live Feed Section */}
       <div className="py-24 bg-gradient-to-br from-primary/5 to-primary/10">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            {/* Left column - LiveFeed */}
-            <div className="glass rounded-3xl shadow-xl p-8 transform rotate-1">
-              <LiveFeed />
-            </div>
-            
-            {/* Right column - Robot Image */}
-            <div className="glass rounded-3xl shadow-xl p-8 transform -rotate-1">
-              <img 
-                src="/lovable-uploads/18929310-08cc-42c6-91bd-88d1d858dc44.png"
-                alt="Robot circuit design"
-                className="w-full h-auto object-contain"
-              />
-            </div>
+          <h2 className="text-4xl font-bold text-center mb-12 text-primary">
+            What is the current RugGenesis Floor Price?
+          </h2>
+          <div className="glass rounded-3xl shadow-xl p-8 transform rotate-1">
+            <LiveFeed />
           </div>
         </div>
       </div>
