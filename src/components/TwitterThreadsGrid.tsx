@@ -37,7 +37,7 @@ const TwitterThreadsGrid = () => {
   ] as [string[], string];
 
   return (
-    <div className="py-12 bg-black">
+    <div className="py-12">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold text-white mb-4">What People Are Saying</h2>
@@ -48,13 +48,13 @@ const TwitterThreadsGrid = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* First column with scrollable thread */}
-          <div className="w-full bg-white/80 rounded-md">
+          <div className="w-full rounded-md">
             <ScrollArea className="h-[500px] md:h-[600px]">
               <div className="flex flex-col gap-4 p-4">
                 {Array.isArray(threadsGrid[0]) && threadsGrid[0].map((tweet, index) => (
                   <div 
                     key={index} 
-                    className="w-full max-w-[550px] mx-auto"
+                    className="w-full"
                     dangerouslySetInnerHTML={{ __html: tweet }} 
                   />
                 ))}
@@ -63,11 +63,11 @@ const TwitterThreadsGrid = () => {
           </div>
 
           {/* Second column with single tweet */}
-          <div className="w-full bg-white/80 rounded-md">
+          <div className="w-full rounded-md">
             <ScrollArea className="h-[500px] md:h-[600px]">
               <div className="p-4">
                 <div 
-                  className="w-full max-w-[550px] mx-auto"
+                  className="w-full"
                   dangerouslySetInnerHTML={{ __html: threadsGrid[1] }} 
                 />
               </div>
