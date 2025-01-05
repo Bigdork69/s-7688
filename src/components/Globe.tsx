@@ -54,7 +54,7 @@ const Globe = () => {
     pointLight2.position.set(-2, -2, -2);
     scene.add(pointLight2);
 
-    // Create connections between cities
+    // Create connections between cities with more locations
     const connections: THREE.Line[] = [];
     const cities = [
       { lat: 40.7128, lng: -74.0060 }, // New York
@@ -63,6 +63,12 @@ const Globe = () => {
       { lat: 22.3193, lng: 114.1694 }, // Hong Kong
       { lat: -33.8688, lng: 151.2093 }, // Sydney
       { lat: 48.8566, lng: 2.3522 },   // Paris
+      { lat: 1.3521, lng: 103.8198 },  // Singapore
+      { lat: 55.7558, lng: 37.6173 },  // Moscow
+      { lat: -23.5505, lng: -46.6333 }, // São Paulo
+      { lat: 25.2048, lng: 55.2708 },  // Dubai
+      { lat: 37.7749, lng: -122.4194 }, // San Francisco
+      { lat: 52.5200, lng: 13.4050 },  // Berlin
     ];
 
     const createConnection = (start: { lat: number; lng: number }, end: { lat: number; lng: number }) => {
@@ -99,12 +105,14 @@ const Globe = () => {
       return new THREE.Vector3(x, y, z).multiplyScalar(2);
     };
 
-    // Create connections between cities
+    // Create more connections between cities
     for (let i = 0; i < cities.length; i++) {
-      for (let j = i + 1; j < cities.length; j++) {
-        const connection = createConnection(cities[i], cities[j]);
-        scene.add(connection);
-        connections.push(connection as unknown as THREE.Line);
+      for (let j = 0; j < cities.length; j++) {
+        if (i !== j && Math.random() < 0.3) { // Increased probability of connections
+          const connection = createConnection(cities[i], cities[j]);
+          scene.add(connection);
+          connections.push(connection as unknown as THREE.Line);
+        }
       }
     }
 
