@@ -81,6 +81,13 @@ const Index = () => {
         </div>
       </div>
 
+      {/* Twitter Threads Section */}
+      <div className="py-24 bg-black">
+        <div className="container mx-auto px-4">
+          <TwitterThread />
+        </div>
+      </div>
+
       <FAQ />
       <KeyLinks />
       <Footer />
