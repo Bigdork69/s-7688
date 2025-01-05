@@ -1,4 +1,4 @@
-import { Button } from "./ui/button";
+import StatItem from "./stats/StatItem";
 
 const stats = [
   { number: "Buy A Rug Genesis", link: "https://blur.io/eth/collection/ruggenesis-nft", buttonText: "Buy NFT" },
@@ -13,16 +13,7 @@ const Stats = () => {
         <h2 className="text-4xl font-bold mb-16 text-center">How Can I Get Involved?</h2>
         <div className="grid md:grid-cols-3 gap-12 text-center">
           {stats.map((stat, index) => (
-            <div key={index} className="flex flex-col items-center justify-between h-full">
-              <div className="text-2xl md:text-3xl font-bold mb-4">{stat.number}</div>
-              <Button 
-                variant="outline" 
-                className="bg-transparent hover:bg-highlight hover:text-primary border-highlight text-highlight transition-colors"
-                onClick={() => window.open(stat.link, '_blank')}
-              >
-                {stat.buttonText}
-              </Button>
-            </div>
+            <StatItem key={index} {...stat} />
           ))}
         </div>
       </div>

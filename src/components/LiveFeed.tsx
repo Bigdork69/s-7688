@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
+import PriceDisplay from "./live-feed/PriceDisplay";
 
 interface FloorPriceData {
   price: {
@@ -42,17 +43,16 @@ const LiveFeed = memo(() => {
       </h2>
       <Card className="w-full max-w-4xl mx-auto bg-[#1A1F2C]/90 backdrop-blur-sm text-white border-2 border-white/10 shadow-2xl">
         <CardHeader className="text-center pb-2 space-y-4">
-          <h3 className="text-2xl sm:text-3xl font-bold mb-2 text-white">RugGenesis Live Price (updated every hour)</h3>
+          <h3 className="text-2xl sm:text-3xl font-bold mb-2 text-white">
+            RugGenesis Live Price (updated every hour)
+          </h3>
           <div className="space-y-2">
             {data && (
-              <>
-                <p className="text-xl sm:text-2xl font-bold text-white">
-                  Ξ {formatPrice(data.price.amount.native)} ETH
-                </p>
-                <p className="text-lg sm:text-xl text-gray-300">
-                  ${formatPrice(data.price.amount.usd)} USD
-                </p>
-              </>
+              <PriceDisplay 
+                nativePrice={data.price.amount.native}
+                usdPrice={data.price.amount.usd}
+                formatPrice={formatPrice}
+              />
             )}
           </div>
         </CardHeader>
