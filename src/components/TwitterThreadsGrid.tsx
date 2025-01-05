@@ -61,7 +61,23 @@ const TwitterThreadsGrid = () => {
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold text-white mb-4">Still On The Fence? Read on</h2>
           <p className="text-lg text-gray-300">
-            threads by @tylerdurdeth @vincevanbtc
+            threads by{" "}
+            <a 
+              href="https://x.com/tylerdurdeth" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 transition-colors"
+            >
+              @tylerdurdeth
+            </a>{" "}
+            <a 
+              href="https://x.com/vincevanbtc" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 transition-colors"
+            >
+              @vincevanbtc
+            </a>
           </p>
         </div>
         
