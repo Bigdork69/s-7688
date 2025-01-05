@@ -56,7 +56,7 @@ const Globe = () => {
     
     const globe = new THREE.Mesh(globeGeometry, globeMaterial);
     
-    // Create car sprite with fixed orientation
+    // Create car sprite with horizontal orientation
     const carTextureLoader = new THREE.TextureLoader();
     carTextureLoader.load('/lovable-uploads/b6b05543-ff5b-4c47-b39d-3ca888ffc2ef.png', (texture) => {
       const carMaterial = new THREE.SpriteMaterial({ map: texture });
@@ -94,7 +94,7 @@ const Globe = () => {
 
     camera.position.z = 5;
 
-    // Smooth orbital animation with fixed car orientation
+    // Smooth orbital animation with horizontal car orientation
     const animate = () => {
       requestAnimationFrame(animate);
       
@@ -110,9 +110,9 @@ const Globe = () => {
         carRef.current.position.y = height;
         carRef.current.position.z = Math.cos(orbitRef.current) * radius;
         
-        // Update car rotation to match orbital direction
+        // Update car rotation to be horizontal
         if (carRef.current.material instanceof THREE.SpriteMaterial) {
-          carRef.current.material.rotation = Math.PI / 2; // Fixed 90-degree rotation
+          carRef.current.material.rotation = 0; // 0-degree rotation for horizontal orientation
         }
       }
       
