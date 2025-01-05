@@ -20,21 +20,23 @@ const TwitterThread = () => {
   ];
 
   return (
-    <div>
-      <div className="text-center mb-4">
-        <h3 className="text-2xl font-bold text-white mb-2">What People Are Saying</h3>
-        <p className="text-sm text-white">
-          Latest threads from <a href="https://twitter.com/tylerdurdeth" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">@tylerdurdeth</a> and <a href="https://twitter.com/vincevanbtc" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">@vincevanbtc</a>
-        </p>
-      </div>
-      
-      <ScrollArea className="h-[500px] w-full rounded-md border p-4 bg-white/80">
-        <div className="space-y-4">
-          {tweets.map((tweet, index) => (
-            <div key={index} dangerouslySetInnerHTML={{ __html: tweet }} />
-          ))}
+    <div className="py-24 bg-black">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-4">
+          <h3 className="text-2xl font-bold text-white mb-2">What People Are Saying</h3>
+          <p className="text-sm text-white">
+            Latest threads from <a href="https://twitter.com/tylerdurdeth" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">@tylerdurdeth</a> and <a href="https://twitter.com/vincevanbtc" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">@vincevanbtc</a>
+          </p>
         </div>
-      </ScrollArea>
+        
+        <ScrollArea className="h-[500px] w-full rounded-md border p-4 bg-white/80">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {tweets.map((tweet, index) => (
+              <div key={index} dangerouslySetInnerHTML={{ __html: tweet }} />
+            ))}
+          </div>
+        </ScrollArea>
+      </div>
     </div>
   );
 };
