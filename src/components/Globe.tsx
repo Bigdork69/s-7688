@@ -23,8 +23,10 @@ const Globe = () => {
     renderer.setPixelRatio(window.devicePixelRatio);
     mountRef.current.appendChild(renderer.domElement);
 
-    // Enhanced globe creation with better geometry resolution
-    const globeGeometry = new THREE.SphereGeometry(2, 64, 64);
+    // Enhanced globe creation with better geometry resolution and proper aspect ratio
+    const radius = 2;
+    const segments = 64;
+    const globeGeometry = new THREE.SphereGeometry(radius, segments, segments);
     
     // Load Earth texture with improved mapping
     const textureLoader = new THREE.TextureLoader();
@@ -81,7 +83,10 @@ const Globe = () => {
     const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x444444, 1.5);
     scene.add(hemisphereLight);
 
-    camera.position.z = 5;
+    // Adjust camera position for better perspective
+    camera.position.z = 6;
+    camera.aspect = mountRef.current.clientWidth / mountRef.current.clientHeight;
+    camera.updateProjectionMatrix();
 
     // Smooth orbital animation with horizontal car orientation
     const animate = () => {
@@ -89,7 +94,7 @@ const Globe = () => {
       
       if (carRef.current) {
         orbitRef.current += 0.005;
-        const radius = 2.1;
+        const radius = 2.5;
         const height = Math.sin(orbitRef.current * 0.5) * 0.2;
         
         carRef.current.position.x = Math.sin(orbitRef.current) * radius;
