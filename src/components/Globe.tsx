@@ -17,12 +17,13 @@ const Globe = () => {
     renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
     mountRef.current.appendChild(renderer.domElement);
 
-    // Globe creation
-    const globeGeometry = new THREE.SphereGeometry(2, 32, 32);
+    // Globe creation with enhanced visibility
+    const globeGeometry = new THREE.SphereGeometry(2, 64, 64); // Increased segments for smoother appearance
     const globeMaterial = new THREE.MeshPhongMaterial({
       map: new THREE.TextureLoader().load('/lovable-uploads/dd06865b-f21a-46c2-baa9-f067adac35ee.png'),
       transparent: true,
-      opacity: 0.9,
+      opacity: 0.95,
+      shininess: 50,
     });
     
     const globe = new THREE.Mesh(globeGeometry, globeMaterial);
@@ -30,13 +31,17 @@ const Globe = () => {
     globeRef.current.add(globe);
     scene.add(globeRef.current);
 
-    // Lighting
-    const ambientLight = new THREE.AmbientLight(0x404040);
+    // Enhanced lighting
+    const ambientLight = new THREE.AmbientLight(0x404040, 2); // Increased intensity
     scene.add(ambientLight);
 
-    const pointLight = new THREE.PointLight(0xffffff, 1);
+    const pointLight = new THREE.PointLight(0xffffff, 2);
     pointLight.position.set(10, 10, 10);
     scene.add(pointLight);
+
+    // Add a subtle bloom effect to the globe
+    const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x444444, 1);
+    scene.add(hemisphereLight);
 
     // City coordinates (longitude, latitude)
     const cities = [
@@ -62,32 +67,43 @@ const Globe = () => {
       return new THREE.Vector3(x, y, z);
     };
 
-    // Create glowing connections
+    // Create enhanced glowing connections
     const createConnection = (startCity: typeof cities[0], endCity: typeof cities[0]) => {
       const start = latLongToVector3(startCity.coords[1], startCity.coords[0], 2);
       const end = latLongToVector3(endCity.coords[1], endCity.coords[0], 2);
       
       const points = [];
-      const segments = 50;
+      const segments = 100; // Increased for smoother curves
       for (let i = 0; i <= segments; i++) {
         const alpha = i / segments;
         const middle = new THREE.Vector3().lerpVectors(start, end, alpha);
-        // Add curve to the line
-        middle.normalize().multiplyScalar(2 + Math.sin(alpha * Math.PI) * 0.5);
+        // Enhanced curve height
+        middle.normalize().multiplyScalar(2 + Math.sin(alpha * Math.PI) * 0.7);
         points.push(middle);
       }
 
       const curve = new THREE.CatmullRomCurve3(points);
-      const geometry = new THREE.TubeGeometry(curve, 20, 0.02, 8, false);
+      const geometry = new THREE.TubeGeometry(curve, 50, 0.02, 8, false);
       const material = new THREE.MeshBasicMaterial({
-        color: 0x00ff00,
+        color: 0x00ff88,
         transparent: true,
-        opacity: 0.6,
+        opacity: 0.0, // Start invisible for fade-in animation
       });
       
       const connection = new THREE.Mesh(geometry, material);
       scene.add(connection);
       connectionsRef.current.push(connection);
+
+      // Animate the connection appearing
+      let opacity = 0;
+      const fadeIn = () => {
+        opacity += 0.02;
+        material.opacity = opacity * Math.sin(Date.now() * 0.002); // Pulsing effect
+        if (opacity < 1) {
+          requestAnimationFrame(fadeIn);
+        }
+      };
+      fadeIn();
     };
 
     // Create random connections every few seconds
@@ -99,13 +115,22 @@ const Globe = () => {
       }
       createConnection(startCity, endCity);
 
-      // Remove old connections
+      // Remove old connections with fade-out animation
       if (connectionsRef.current.length > 10) {
         const oldConnection = connectionsRef.current.shift();
         if (oldConnection) {
-          scene.remove(oldConnection);
-          oldConnection.geometry.dispose();
-          (oldConnection.material as THREE.Material).dispose();
+          const fadeOut = () => {
+            const material = oldConnection.material as THREE.MeshBasicMaterial;
+            material.opacity -= 0.05;
+            if (material.opacity <= 0) {
+              scene.remove(oldConnection);
+              oldConnection.geometry.dispose();
+              material.dispose();
+            } else {
+              requestAnimationFrame(fadeOut);
+            }
+          };
+          fadeOut();
         }
       }
     };
@@ -125,8 +150,15 @@ const Globe = () => {
     const animate = () => {
       requestAnimationFrame(animate);
       if (globeRef.current) {
-        globeRef.current.rotation.y += 0.002;
+        globeRef.current.rotation.y += 0.001; // Slower rotation for better visibility
       }
+
+      // Animate existing connections
+      connectionsRef.current.forEach((connection) => {
+        const material = connection.material as THREE.MeshBasicMaterial;
+        material.opacity = 0.6 + Math.sin(Date.now() * 0.002) * 0.2; // Smooth pulsing effect
+      });
+
       renderer.render(scene, camera);
     };
     animate();
