@@ -2,7 +2,7 @@ const LiveStats = () => {
   return (
     <div className="text-center p-8">
       <img 
-        src="/lovable-uploads/76621a0e-b7b7-47e7-9185-8f95fb49276b.png"
+        src="/lovable-uploads/32b864ef-9199-4788-b371-730357ae7b36.png"
         alt="Myriad Logo"
         className="h-16 mx-auto mb-6"
       />
