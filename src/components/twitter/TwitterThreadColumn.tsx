@@ -50,7 +50,16 @@ const TwitterThreadColumn = memo(({ tweets }: TwitterThreadColumnProps) => {
               className="w-full max-w-[100vw] md:max-w-full mx-auto px-2 md:px-4"
             >
               {isLoading ? (
-                <div className="animate-pulse bg-gray-200 rounded-lg h-48 w-full" />
+                <div className="relative overflow-hidden rounded-lg">
+                  <div className="h-48 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 animate-pulse">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-700 to-transparent animate-[shimmer_1.5s_infinite]" 
+                         style={{
+                           backgroundSize: '200% 100%',
+                           animation: 'shimmer 2s infinite linear',
+                         }}
+                    />
+                  </div>
+                </div>
               ) : (
                 <div dangerouslySetInnerHTML={{ __html: tweet }} />
               )}
