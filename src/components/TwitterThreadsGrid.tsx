@@ -15,7 +15,7 @@ const TwitterThreadsGrid = () => {
   }, []);
 
   const threadsGrid = [
-    `<blockquote class="twitter-tweet"><p lang="en" dir="ltr">MYRIAD is the interconnected media ecosystem that integrates on-chain Prediction Markets and Quests, alongside written and video content.<br><br>Here&#39;s what you need to know about MYRIAD 🧵 <a href="https://t.co/Hs8Gy7Iqrm">pic.twitter.com/Hs8Gy7Iqrm</a></p>&mdash; MYRIAD (@MyriadMarkets) <a href="https://twitter.com/MyriadMarkets/status/1747664131664339087?ref_src=twsrc%5Etfw">January 17, 2024</a></blockquote>`,
+    `<blockquote class="twitter-tweet"><p lang="en" dir="ltr">🧵Thread <a href="https://twitter.com/MyriadMarkets?ref_src=twsrc%5Etfw">@MyriadMarkets</a> x <a href="https://twitter.com/RugRadio?ref_src=twsrc%5Etfw">@RugRadio</a><br><br>My DMs are full of people asking what is going on with Myriad Market and the Rug Radio Genesis NFTs, <a href="https://twitter.com/search?q=%24RUG&amp;src=ctag&amp;ref_src=twsrc%5Etfw">$RUG</a>, <a href="https://twitter.com/search?q=%24MYR&amp;src=ctag&amp;ref_src=twsrc%5Etfw">$MYR</a>, etc...<br><br>All details below 👇</p>&mdash; ※ Vince (@vincevanbtc) <a href="https://twitter.com/vincevanbtc/status/1874942675990004006?ref_src=twsrc%5Etfw">January 2, 2025</a></blockquote>`,
     `<blockquote class="twitter-tweet"><p lang="en" dir="ltr">MYRIAD Points are the foundation of the MYRIAD ecosystem.<br><br>Here&#39;s everything you need to know about MYRIAD Points 🧵 <a href="https://t.co/Hs8Gy7Iqrm">pic.twitter.com/Hs8Gy7Iqrm</a></p>&mdash; MYRIAD (@MyriadMarkets) <a href="https://twitter.com/MyriadMarkets/status/1747664131664339087?ref_src=twsrc%5Etfw">January 17, 2024</a></blockquote>`
   ];
 
