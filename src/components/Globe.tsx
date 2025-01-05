@@ -40,15 +40,17 @@ const Globe = () => {
     const globe = new THREE.Mesh(globeGeometry, globeMaterial);
     globe.rotation.y = Math.PI; // Initial rotation to show the correct side
     
-    // Create car sprite
+    // Create car sprite with new image
     const carTextureLoader = new THREE.TextureLoader();
-    carTextureLoader.load('/lovable-uploads/a842b061-ded7-467a-96a9-3364f26347c4.png', (texture) => {
+    carTextureLoader.load('/lovable-uploads/e7755a0f-26cb-4148-abb0-4744153a1db6.png', (texture) => {
       const carMaterial = new THREE.SpriteMaterial({ map: texture });
       const car = new THREE.Sprite(carMaterial);
       
-      // Scale and position the car
-      car.scale.set(1, 0.5, 1);
-      car.position.set(0, 2.5, 0); // Position slightly above the globe's surface
+      // Adjust scale for better visibility
+      car.scale.set(0.8, 0.8, 1);
+      
+      // Position the car at the center of the globe's surface
+      car.position.set(0, 0, 2.1); // Slightly above the globe's surface
       
       carRef.current = car;
       scene.add(car);
@@ -81,8 +83,8 @@ const Globe = () => {
         // Update car position to follow globe rotation
         if (carRef.current) {
           const angle = globeRef.current.rotation.y;
-          carRef.current.position.x = Math.sin(angle) * 2.5;
-          carRef.current.position.z = Math.cos(angle) * 2.5;
+          carRef.current.position.x = Math.sin(angle) * 2.1;
+          carRef.current.position.z = Math.cos(angle) * 2.1;
           // Make car always face the camera
           if (carRef.current.material instanceof THREE.SpriteMaterial) {
             carRef.current.material.rotation = -angle;
