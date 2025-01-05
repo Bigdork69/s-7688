@@ -37,7 +37,7 @@
 }
 
 .glass {
-  @apply bg-white bg-opacity-10 backdrop-blur-lg border-2 border-white border-opacity-20;
+  @apply bg-white bg-opacity-10 backdrop-blur-lg;
 }
 
 .dot-pattern {
