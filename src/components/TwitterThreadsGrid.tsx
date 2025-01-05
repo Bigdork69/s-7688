@@ -46,27 +46,33 @@ const TwitterThreadsGrid = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* First column with scrollable thread */}
-          <ScrollArea className="h-[60vh] md:h-[70vh] w-full rounded-md bg-white/80">
-            <div className="flex flex-col gap-4 p-4">
-              {Array.isArray(threadsGrid[0]) && threadsGrid[0].map((tweet, index) => (
-                <div 
-                  key={index} 
-                  className="w-full overflow-hidden"
-                  dangerouslySetInnerHTML={{ __html: tweet }} 
-                />
-              ))}
-            </div>
-          </ScrollArea>
+          <div className="w-full bg-white/80 rounded-md">
+            <ScrollArea className="h-[500px] md:h-[600px]">
+              <div className="flex flex-col gap-4 p-4">
+                {Array.isArray(threadsGrid[0]) && threadsGrid[0].map((tweet, index) => (
+                  <div 
+                    key={index} 
+                    className="w-full max-w-[550px] mx-auto"
+                    dangerouslySetInnerHTML={{ __html: tweet }} 
+                  />
+                ))}
+              </div>
+            </ScrollArea>
+          </div>
 
           {/* Second column with single tweet */}
-          <ScrollArea className="h-[60vh] md:h-[70vh] w-full rounded-md bg-white/80">
-            <div 
-              className="p-4 overflow-hidden" 
-              dangerouslySetInnerHTML={{ __html: threadsGrid[1] }} 
-            />
-          </ScrollArea>
+          <div className="w-full bg-white/80 rounded-md">
+            <ScrollArea className="h-[500px] md:h-[600px]">
+              <div className="p-4">
+                <div 
+                  className="w-full max-w-[550px] mx-auto"
+                  dangerouslySetInnerHTML={{ __html: threadsGrid[1] }} 
+                />
+              </div>
+            </ScrollArea>
+          </div>
         </div>
       </div>
     </div>
