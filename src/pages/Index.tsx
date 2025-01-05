@@ -57,6 +57,13 @@ const Index = () => {
       <Stats />
       <QuoteSection />
       
+      {/* Twitter Threads Section */}
+      <div className="py-24 bg-black">
+        <div className="container mx-auto px-4">
+          <TwitterThread />
+        </div>
+      </div>
+
       {/* Combined Live Feed and Twitter Thread Section */}
       <div className="py-24 bg-black bg-opacity-95">
         <div className="container mx-auto px-4">
