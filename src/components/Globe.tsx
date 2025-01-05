@@ -9,49 +9,56 @@ const Globe = () => {
   useEffect(() => {
     if (!mountRef.current) return;
 
-    // Scene setup
+    // Scene setup with improved background
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    const renderer = new THREE.WebGLRenderer({ 
+      antialias: true, 
+      alpha: true,
+      logarithmicDepthBuffer: true 
+    });
     
     renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
     mountRef.current.appendChild(renderer.domElement);
 
-    // Globe creation with enhanced visibility
+    // Enhanced globe creation
     const globeGeometry = new THREE.SphereGeometry(2, 64, 64);
     
-    // Load texture and ensure it wraps correctly around the sphere
+    // Load Earth texture with better mapping
     const textureLoader = new THREE.TextureLoader();
     const globeTexture = textureLoader.load('/lovable-uploads/dd06865b-f21a-46c2-baa9-f067adac35ee.png', (texture) => {
       texture.wrapS = THREE.RepeatWrapping;
       texture.wrapT = THREE.RepeatWrapping;
       texture.repeat.set(1, 1);
-      texture.offset.x = 0.25; // Adjust offset to align the texture properly
+      texture.offset.x = 0.5; // Adjust to align the texture properly
       texture.needsUpdate = true;
     });
+
+    // Create normal map for better surface detail
+    const normalMap = textureLoader.load('/lovable-uploads/dd06865b-f21a-46c2-baa9-f067adac35ee.png');
     
+    // Enhanced material with better shading
     const globeMaterial = new THREE.MeshPhongMaterial({
       map: globeTexture,
+      normalMap: normalMap,
+      normalScale: new THREE.Vector2(0.05, 0.05),
+      shininess: 15,
+      specular: new THREE.Color(0x333333),
       transparent: true,
       opacity: 0.95,
-      shininess: 50,
     });
     
     const globe = new THREE.Mesh(globeGeometry, globeMaterial);
-    globe.rotation.y = Math.PI; // Initial rotation to show the correct side
+    globe.rotation.y = Math.PI;
     
     // Create car sprite with new image
     const carTextureLoader = new THREE.TextureLoader();
     carTextureLoader.load('/lovable-uploads/e7755a0f-26cb-4148-abb0-4744153a1db6.png', (texture) => {
       const carMaterial = new THREE.SpriteMaterial({ map: texture });
       const car = new THREE.Sprite(carMaterial);
-      
-      // Adjust scale for better visibility
       car.scale.set(0.8, 0.8, 1);
-      
-      // Position the car at the center of the globe's surface
-      car.position.set(0, 0, 2.1); // Slightly above the globe's surface
-      
+      car.position.set(0, 0, 2.1);
       carRef.current = car;
       scene.add(car);
     });
@@ -60,16 +67,27 @@ const Globe = () => {
     globeRef.current.add(globe);
     scene.add(globeRef.current);
 
-    // Enhanced lighting
-    const ambientLight = new THREE.AmbientLight(0x404040, 2);
+    // Enhanced lighting setup
+    const ambientLight = new THREE.AmbientLight(0x404040, 2.5);
     scene.add(ambientLight);
 
-    const pointLight = new THREE.PointLight(0xffffff, 2);
+    const pointLight = new THREE.PointLight(0xffffff, 2.5);
     pointLight.position.set(10, 10, 10);
     scene.add(pointLight);
 
-    const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x444444, 1);
+    const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x444444, 1.5);
     scene.add(hemisphereLight);
+
+    // Add subtle glow effect
+    const glowGeometry = new THREE.SphereGeometry(2.05, 32, 32);
+    const glowMaterial = new THREE.MeshPhongMaterial({
+      color: 0x0088ff,
+      transparent: true,
+      opacity: 0.05,
+      side: THREE.BackSide,
+    });
+    const glowMesh = new THREE.Mesh(glowGeometry, glowMaterial);
+    globeRef.current.add(glowMesh);
 
     // Camera position
     camera.position.z = 5;
