@@ -23,9 +23,33 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="glass rounded-3xl shadow-2xl overflow-hidden">
             <div className="relative">
-              <Globe />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 flex items-end justify-center pb-12">
-                <LiveStats />
+              {/* Animated Starfield Background */}
+              <div className="absolute inset-0 dot-pattern opacity-50 animate-[pulse_4s_ease-in-out_infinite]">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20" />
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2">
+                <Globe />
+                <div className="flex items-center justify-center relative">
+                  <div className="absolute inset-0">
+                    {/* Additional animated stars */}
+                    {[...Array(50)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="absolute w-1 h-1 bg-white rounded-full animate-float"
+                        style={{
+                          left: `${Math.random() * 100}%`,
+                          top: `${Math.random() * 100}%`,
+                          animationDelay: `${Math.random() * 3}s`,
+                          opacity: Math.random() * 0.7 + 0.3,
+                        }}
+                      />
+                    ))}
+                  </div>
+                  <div className="relative z-10">
+                    <LiveStats />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
