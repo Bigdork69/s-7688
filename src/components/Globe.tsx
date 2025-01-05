@@ -29,18 +29,18 @@ const Globe = () => {
     const textureLoader = new THREE.TextureLoader();
     const globeTexture = textureLoader.load('/lovable-uploads/33d60aea-ec22-40f9-bba3-519f2cbf9c56.png', (texture) => {
       texture.wrapS = THREE.RepeatWrapping;
-      texture.wrapT = THREE.RepeatWrapping;
-      texture.repeat.set(2, 1); // Repeat texture horizontally twice
-      texture.offset.x = 0; // Reset offset
+      texture.wrapT = THREE.ClampToEdgeWrapping;
+      texture.repeat.set(2, 1);
+      texture.offset.x = 0.5; // Adjust offset to align texture properly
       texture.needsUpdate = true;
     });
 
     // Create normal map for better surface detail
     const normalMap = textureLoader.load('/lovable-uploads/33d60aea-ec22-40f9-bba3-519f2cbf9c56.png', (texture) => {
       texture.wrapS = THREE.RepeatWrapping;
-      texture.wrapT = THREE.RepeatWrapping;
-      texture.repeat.set(2, 1); // Match the color texture repeat
-      texture.offset.x = 0;
+      texture.wrapT = THREE.ClampToEdgeWrapping;
+      texture.repeat.set(2, 1);
+      texture.offset.x = 0.5; // Match the color texture offset
       texture.needsUpdate = true;
     });
     
@@ -56,7 +56,7 @@ const Globe = () => {
     });
     
     const globe = new THREE.Mesh(globeGeometry, globeMaterial);
-    globe.rotation.y = Math.PI;
+    globe.rotation.y = -Math.PI / 2; // Adjust initial rotation to align texture
     
     // Create car sprite with new image
     const carTextureLoader = new THREE.TextureLoader();
@@ -73,7 +73,6 @@ const Globe = () => {
     globeRef.current.add(globe);
     scene.add(globeRef.current);
 
-    // Enhanced lighting setup
     const ambientLight = new THREE.AmbientLight(0x404040, 2.5);
     scene.add(ambientLight);
 
@@ -119,7 +118,6 @@ const Globe = () => {
     };
     animate();
 
-    // Handle window resize
     const handleResize = () => {
       if (!mountRef.current) return;
       const width = mountRef.current.clientWidth;
@@ -137,6 +135,7 @@ const Globe = () => {
       }
       window.removeEventListener('resize', handleResize);
     };
+
   }, []);
 
   return <div ref={mountRef} className="w-full h-[600px]" />;
