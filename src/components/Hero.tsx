@@ -11,8 +11,8 @@ const Hero = memo(() => {
             {/* Left side - Laptop Image */}
             <div className="relative">
               <img 
-                src="/lovable-uploads/5b038ec7-8957-49c4-a96e-0944928cbc09.png" 
-                alt="Laptop displaying Myriad interface" 
+                src="/lovable-uploads/d825f6e4-09e8-41da-853a-2cc1d061f5b6.png" 
+                alt="Tyler Durdeth Tweet about Myriad" 
                 className="w-full h-auto rounded-lg shadow-2xl animate-float"
               />
             </div>
