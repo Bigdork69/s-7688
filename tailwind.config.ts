@@ -41,19 +41,14 @@ export default {
           to: { height: "0" },
         },
         float: {
-          '0%, 100%': { transform: 'translateY(0) scale(1)', opacity: '0.5' },
-          '50%': { transform: 'translateY(-20px) scale(1.2)', opacity: '1' },
-        },
-        pulse: {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0.5' },
+          '0%, 100%': { transform: 'translateY(0)', opacity: '0.2' },
+          '50%': { transform: 'translateY(-20px)', opacity: '0.5' },
         }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "float": "float 6s ease-in-out infinite",
-        "pulse": "pulse 4s ease-in-out infinite",
+        "float": "float 8s ease-in-out infinite",
       },
     },
   },

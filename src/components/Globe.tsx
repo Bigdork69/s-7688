@@ -81,17 +81,6 @@ const Globe = () => {
     const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x444444, 1.5);
     scene.add(hemisphereLight);
 
-    // Add subtle glow effect
-    const glowGeometry = new THREE.SphereGeometry(2.05, 32, 32);
-    const glowMaterial = new THREE.MeshPhongMaterial({
-      color: 0x0088ff,
-      transparent: true,
-      opacity: 0.05,
-      side: THREE.BackSide,
-    });
-    const glowMesh = new THREE.Mesh(glowGeometry, glowMaterial);
-    globeRef.current.add(glowMesh);
-
     camera.position.z = 5;
 
     // Smooth orbital animation with horizontal car orientation
@@ -99,20 +88,16 @@ const Globe = () => {
       requestAnimationFrame(animate);
       
       if (carRef.current) {
-        // Update orbit angle
         orbitRef.current += 0.005;
-        
-        // Calculate car position in orbital path
         const radius = 2.1;
-        const height = Math.sin(orbitRef.current * 0.5) * 0.2; // Add slight vertical movement
+        const height = Math.sin(orbitRef.current * 0.5) * 0.2;
         
         carRef.current.position.x = Math.sin(orbitRef.current) * radius;
         carRef.current.position.y = height;
         carRef.current.position.z = Math.cos(orbitRef.current) * radius;
         
-        // Update car rotation to be horizontal
         if (carRef.current.material instanceof THREE.SpriteMaterial) {
-          carRef.current.material.rotation = 0; // 0-degree rotation for horizontal orientation
+          carRef.current.material.rotation = 0;
         }
       }
       
