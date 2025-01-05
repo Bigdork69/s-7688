@@ -7,10 +7,10 @@ import LiveFeed from "../components/LiveFeed"
 import FAQ from "../components/FAQ"
 import QuoteSection from "../components/QuoteSection"
 import ClaimChecker from "../components/ClaimChecker"
+import TwitterThread from "../components/TwitterThread"
 import KeyLinks from "../components/KeyLinks"
 import Globe from "../components/Globe"
 import LiveStats from "../components/LiveStats"
-import TwitterThread from "../components/TwitterThread"
 
 const Index = () => {
   return (
@@ -19,7 +19,7 @@ const Index = () => {
       <Hero />
       <Features />
       
-      {/* Globe Section */}
+      {/* Globe Section - Moved below Features */}
       <div className="relative bg-black py-24">
         <div className="container mx-auto px-4">
           <div className="glass rounded-3xl overflow-hidden">
@@ -81,12 +81,11 @@ const Index = () => {
         </div>
       </div>
 
-      <TwitterThread />
       <FAQ />
       <KeyLinks />
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default Index;
+export default Index
