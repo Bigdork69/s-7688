@@ -21,10 +21,13 @@ const Globe = () => {
     
     // Load texture and ensure it wraps correctly around the sphere
     const textureLoader = new THREE.TextureLoader();
-    const globeTexture = textureLoader.load('/lovable-uploads/dd06865b-f21a-46c2-baa9-f067adac35ee.png');
-    globeTexture.wrapS = THREE.RepeatWrapping;
-    globeTexture.wrapT = THREE.RepeatWrapping;
-    globeTexture.repeat.set(1, 1);
+    const globeTexture = textureLoader.load('/lovable-uploads/dd06865b-f21a-46c2-baa9-f067adac35ee.png', (texture) => {
+      texture.wrapS = THREE.RepeatWrapping;
+      texture.wrapT = THREE.RepeatWrapping;
+      texture.repeat.set(1, 1);
+      texture.offset.x = 0.5; // Adjust the texture offset to align properly
+      texture.needsUpdate = true;
+    });
     
     const globeMaterial = new THREE.MeshPhongMaterial({
       map: globeTexture,
@@ -34,6 +37,8 @@ const Globe = () => {
     });
     
     const globe = new THREE.Mesh(globeGeometry, globeMaterial);
+    globe.rotation.y = Math.PI; // Rotate the globe 180 degrees to show the correct side
+    
     globeRef.current = new THREE.Group();
     globeRef.current.add(globe);
     scene.add(globeRef.current);
