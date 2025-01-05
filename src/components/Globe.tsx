@@ -4,7 +4,7 @@ import * as THREE from 'three';
 const Globe = () => {
   const mountRef = useRef<HTMLDivElement>(null);
   const globeRef = useRef<THREE.Group | null>(null);
-  const linesRef = useRef<THREE.Line[]>([]);
+  const connectionsRef = useRef<THREE.Mesh[]>([]);
 
   useEffect(() => {
     if (!mountRef.current) return;
@@ -85,9 +85,9 @@ const Globe = () => {
         opacity: 0.6,
       });
       
-      const line = new THREE.Mesh(geometry, material);
-      scene.add(line);
-      linesRef.current.push(line);
+      const connection = new THREE.Mesh(geometry, material);
+      scene.add(connection);
+      connectionsRef.current.push(connection);
     };
 
     // Create random connections every few seconds
@@ -100,12 +100,12 @@ const Globe = () => {
       createConnection(startCity, endCity);
 
       // Remove old connections
-      if (linesRef.current.length > 10) {
-        const oldLine = linesRef.current.shift();
-        if (oldLine) {
-          scene.remove(oldLine);
-          oldLine.geometry.dispose();
-          (oldLine.material as THREE.Material).dispose();
+      if (connectionsRef.current.length > 10) {
+        const oldConnection = connectionsRef.current.shift();
+        if (oldConnection) {
+          scene.remove(oldConnection);
+          oldConnection.geometry.dispose();
+          (oldConnection.material as THREE.Material).dispose();
         }
       }
     };
