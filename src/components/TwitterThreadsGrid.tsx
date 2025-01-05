@@ -51,14 +51,21 @@ const TwitterThreadsGrid = () => {
           <ScrollArea className="h-[600px] md:h-[700px] w-full rounded-md bg-white/80">
             <div className="space-y-4 p-2">
               {Array.isArray(threadsGrid[0]) && threadsGrid[0].map((tweet, index) => (
-                <div key={index} className="w-full" dangerouslySetInnerHTML={{ __html: tweet }} />
+                <div 
+                  key={index} 
+                  className="w-full" 
+                  dangerouslySetInnerHTML={{ __html: tweet as string }} 
+                />
               ))}
             </div>
           </ScrollArea>
 
           {/* Second column with single tweet */}
           <ScrollArea className="h-[600px] md:h-[700px] w-full rounded-md bg-white/80">
-            <div className="p-2" dangerouslySetInnerHTML={{ __html: threadsGrid[1] }} />
+            <div 
+              className="p-2" 
+              dangerouslySetInnerHTML={{ __html: threadsGrid[1] }} 
+            />
           </ScrollArea>
         </div>
       </div>
