@@ -57,17 +57,27 @@ const Index = () => {
       <Stats />
       <QuoteSection />
       
+      {/* Combined Live Feed and Twitter Thread Section */}
+      <div className="py-24 bg-black bg-opacity-95">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Live Feed Column */}
+            <div className="glass rounded-3xl shadow-xl p-8 transform rotate-1">
+              <LiveFeed />
+            </div>
+            
+            {/* Twitter Thread Column */}
+            <div className="glass rounded-3xl shadow-xl p-8 transform -rotate-1">
+              <TwitterThread />
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Claim Checker Section */}
       <div className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <ClaimChecker />
-        </div>
-      </div>
-
-      {/* Twitter Threads Section - Moved here */}
-      <div className="py-24 bg-black">
-        <div className="container mx-auto px-4">
-          <TwitterThread />
         </div>
       </div>
 
