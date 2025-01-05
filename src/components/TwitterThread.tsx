@@ -37,7 +37,7 @@ const TwitterThread = () => {
         </p>
       </div>
       
-      <ScrollArea className="h-[500px] w-full rounded-md border p-4 bg-white/80">
+      <ScrollArea className="h-[500px] md:h-[500px] w-full rounded-md border p-4 bg-white/80 aspect-[4/3] md:aspect-auto">
         <div className="space-y-4">
           {tweets.map((tweet, index) => (
             <div key={index} dangerouslySetInnerHTML={{ __html: tweet }} />
