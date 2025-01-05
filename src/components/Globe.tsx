@@ -5,6 +5,7 @@ const Globe = () => {
   const mountRef = useRef<HTMLDivElement>(null);
   const globeRef = useRef<THREE.Group | null>(null);
   const carRef = useRef<THREE.Sprite | null>(null);
+  const orbitRef = useRef<number>(0);
 
   useEffect(() => {
     if (!mountRef.current) return;
@@ -30,8 +31,7 @@ const Globe = () => {
     const globeTexture = textureLoader.load('/lovable-uploads/33d60aea-ec22-40f9-bba3-519f2cbf9c56.png', (texture) => {
       texture.wrapS = THREE.RepeatWrapping;
       texture.wrapT = THREE.ClampToEdgeWrapping;
-      texture.repeat.set(2, 1);
-      texture.offset.x = 0.5;
+      texture.repeat.set(1, 1);
       texture.needsUpdate = true;
     });
 
@@ -39,8 +39,7 @@ const Globe = () => {
     const normalMap = textureLoader.load('/lovable-uploads/33d60aea-ec22-40f9-bba3-519f2cbf9c56.png', (texture) => {
       texture.wrapS = THREE.RepeatWrapping;
       texture.wrapT = THREE.ClampToEdgeWrapping;
-      texture.repeat.set(2, 1);
-      texture.offset.x = 0.5;
+      texture.repeat.set(1, 1);
       texture.needsUpdate = true;
     });
     
@@ -56,15 +55,13 @@ const Globe = () => {
     });
     
     const globe = new THREE.Mesh(globeGeometry, globeMaterial);
-    globe.rotation.y = -Math.PI / 2;
     
-    // Create car sprite with fixed orientation
+    // Create car sprite with dynamic orientation
     const carTextureLoader = new THREE.TextureLoader();
     carTextureLoader.load('/lovable-uploads/b6b05543-ff5b-4c47-b39d-3ca888ffc2ef.png', (texture) => {
       const carMaterial = new THREE.SpriteMaterial({ map: texture });
       const car = new THREE.Sprite(carMaterial);
       car.scale.set(0.8, 0.8, 1);
-      car.position.set(0, 0, 2.1);
       carRef.current = car;
       scene.add(car);
     });
@@ -73,6 +70,7 @@ const Globe = () => {
     globeRef.current.add(globe);
     scene.add(globeRef.current);
 
+    // Enhanced lighting setup
     const ambientLight = new THREE.AmbientLight(0x404040, 2.5);
     scene.add(ambientLight);
 
@@ -96,25 +94,28 @@ const Globe = () => {
 
     camera.position.z = 5;
 
-    // Animation with fixed car orientation
-    let orbitAngle = 0;
+    // Smooth orbital animation
     const animate = () => {
       requestAnimationFrame(animate);
-      if (globeRef.current) {
-        globeRef.current.rotation.y += 0.001;
+      
+      if (carRef.current) {
+        // Update orbit angle
+        orbitRef.current += 0.005;
         
-        // Update car position in circular orbit
-        if (carRef.current) {
-          orbitAngle += 0.002; // Adjust speed as needed
-          const radius = 2.1;
-          carRef.current.position.x = Math.sin(orbitAngle) * radius;
-          carRef.current.position.z = Math.cos(orbitAngle) * radius;
-          // Keep car oriented upright
-          if (carRef.current.material instanceof THREE.SpriteMaterial) {
-            carRef.current.material.rotation = 0;
-          }
+        // Calculate car position in orbital path
+        const radius = 2.1;
+        const height = Math.sin(orbitRef.current * 0.5) * 0.2; // Add slight vertical movement
+        
+        carRef.current.position.x = Math.sin(orbitRef.current) * radius;
+        carRef.current.position.y = height;
+        carRef.current.position.z = Math.cos(orbitRef.current) * radius;
+        
+        // Update car rotation to match orbital direction
+        if (carRef.current.material instanceof THREE.SpriteMaterial) {
+          carRef.current.material.rotation = orbitRef.current + Math.PI / 2;
         }
       }
+      
       renderer.render(scene, camera);
     };
     animate();
