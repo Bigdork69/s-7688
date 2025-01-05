@@ -9,12 +9,29 @@ import QuoteSection from "../components/QuoteSection"
 import ClaimChecker from "../components/ClaimChecker"
 import TwitterThread from "../components/TwitterThread"
 import KeyLinks from "../components/KeyLinks"
+import Globe from "../components/Globe"
+import LiveStats from "../components/LiveStats"
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
       <Hero />
+      
+      {/* Globe Section */}
+      <div className="relative bg-black py-24">
+        <div className="container mx-auto px-4">
+          <div className="glass rounded-3xl shadow-2xl overflow-hidden">
+            <div className="relative">
+              <Globe />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 flex items-end justify-center pb-12">
+                <LiveStats />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <Features />
       <Stats />
       <QuoteSection />
