@@ -75,15 +75,15 @@ const Index = () => {
         </div>
       </div>
 
-      {/* New Twitter Threads Grid Section */}
-      <TwitterThreadsGrid />
-
       {/* Claim Checker Section */}
       <div className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <ClaimChecker />
         </div>
       </div>
+
+      {/* Twitter Threads Grid Section - Moved below Claim Checker */}
+      <TwitterThreadsGrid />
 
       <FAQ />
       <KeyLinks />
