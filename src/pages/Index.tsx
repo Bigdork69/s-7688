@@ -8,6 +8,7 @@ import FAQ from "../components/FAQ"
 import QuoteSection from "../components/QuoteSection"
 import ClaimChecker from "../components/ClaimChecker"
 import TwitterThread from "../components/TwitterThread"
+import TwitterThreadsGrid from "../components/TwitterThreadsGrid"
 import KeyLinks from "../components/KeyLinks"
 import Globe from "../components/Globe"
 import LiveStats from "../components/LiveStats"
@@ -19,7 +20,7 @@ const Index = () => {
       <Hero />
       <Features />
       
-      {/* Globe Section - Moved below Features */}
+      {/* Globe Section */}
       <div className="relative bg-black py-24">
         <div className="container mx-auto px-4">
           <div className="glass rounded-3xl overflow-hidden">
@@ -73,6 +74,9 @@ const Index = () => {
           </div>
         </div>
       </div>
+
+      {/* New Twitter Threads Grid Section */}
+      <TwitterThreadsGrid />
 
       {/* Claim Checker Section */}
       <div className="py-24 bg-white">
