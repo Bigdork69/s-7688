@@ -23,8 +23,22 @@ const TwitterThreadColumn = memo(({ tweets }: TwitterThreadColumnProps) => {
     script.onload = () => {
       // @ts-ignore - window.twttr exists after script loads
       if (window.twttr) {
+        // Configure Twitter widget with light theme
         // @ts-ignore
-        window.twttr.widgets.load();
+        window.twttr.widgets.load(undefined, document.getElementById('twitter-thread-container'));
+        // Set theme preference globally for this container
+        // @ts-ignore
+        window.twttr.widgets.createTweet = (function(originalFunction) {
+          return function(tweetId: string, element: HTMLElement, options: any) {
+            return originalFunction.call(this, tweetId, element, {
+              ...options,
+              theme: 'light',
+              dnt: true
+            });
+          };
+        // @ts-ignore
+        })(window.twttr.widgets.createTweet);
+        
         setIsLoading(false);
       }
     };
@@ -43,7 +57,7 @@ const TwitterThreadColumn = memo(({ tweets }: TwitterThreadColumnProps) => {
   return (
     <div className="w-full rounded-md">
       <ScrollArea className="h-[500px] md:h-[600px]">
-        <div className="flex flex-col gap-4 p-4">
+        <div id="twitter-thread-container" className="flex flex-col gap-4 p-4">
           {tweets.map((tweet, index) => (
             <div 
               key={index} 
@@ -51,8 +65,8 @@ const TwitterThreadColumn = memo(({ tweets }: TwitterThreadColumnProps) => {
             >
               {isLoading ? (
                 <div className="relative overflow-hidden rounded-lg">
-                  <div className="h-48 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 animate-pulse">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-700 to-transparent animate-[shimmer_1.5s_infinite]" 
+                  <div className="h-48 bg-gradient-to-r from-gray-100 via-gray-50 to-gray-100 animate-pulse">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-200 to-transparent animate-[shimmer_1.5s_infinite]" 
                          style={{
                            backgroundSize: '200% 100%',
                            animation: 'shimmer 2s infinite linear',
