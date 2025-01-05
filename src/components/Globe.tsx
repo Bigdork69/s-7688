@@ -31,7 +31,7 @@ const Globe = () => {
       texture.wrapS = THREE.RepeatWrapping;
       texture.wrapT = THREE.ClampToEdgeWrapping;
       texture.repeat.set(2, 1);
-      texture.offset.x = 0.5; // Adjust offset to align texture properly
+      texture.offset.x = 0.5;
       texture.needsUpdate = true;
     });
 
@@ -40,7 +40,7 @@ const Globe = () => {
       texture.wrapS = THREE.RepeatWrapping;
       texture.wrapT = THREE.ClampToEdgeWrapping;
       texture.repeat.set(2, 1);
-      texture.offset.x = 0.5; // Match the color texture offset
+      texture.offset.x = 0.5;
       texture.needsUpdate = true;
     });
     
@@ -56,9 +56,9 @@ const Globe = () => {
     });
     
     const globe = new THREE.Mesh(globeGeometry, globeMaterial);
-    globe.rotation.y = -Math.PI / 2; // Adjust initial rotation to align texture
+    globe.rotation.y = -Math.PI / 2;
     
-    // Create car sprite with new image
+    // Create car sprite with fixed orientation
     const carTextureLoader = new THREE.TextureLoader();
     carTextureLoader.load('/lovable-uploads/b6b05543-ff5b-4c47-b39d-3ca888ffc2ef.png', (texture) => {
       const carMaterial = new THREE.SpriteMaterial({ map: texture });
@@ -94,23 +94,24 @@ const Globe = () => {
     const glowMesh = new THREE.Mesh(glowGeometry, glowMaterial);
     globeRef.current.add(glowMesh);
 
-    // Camera position
     camera.position.z = 5;
 
-    // Animation
+    // Animation with fixed car orientation
+    let orbitAngle = 0;
     const animate = () => {
       requestAnimationFrame(animate);
       if (globeRef.current) {
         globeRef.current.rotation.y += 0.001;
         
-        // Update car position to follow globe rotation
+        // Update car position in circular orbit
         if (carRef.current) {
-          const angle = globeRef.current.rotation.y;
-          carRef.current.position.x = Math.sin(angle) * 2.1;
-          carRef.current.position.z = Math.cos(angle) * 2.1;
-          // Make car always face the camera
+          orbitAngle += 0.002; // Adjust speed as needed
+          const radius = 2.1;
+          carRef.current.position.x = Math.sin(orbitAngle) * radius;
+          carRef.current.position.z = Math.cos(orbitAngle) * radius;
+          // Keep car oriented upright
           if (carRef.current.material instanceof THREE.SpriteMaterial) {
-            carRef.current.material.rotation = -angle;
+            carRef.current.material.rotation = 0;
           }
         }
       }
@@ -128,7 +129,6 @@ const Globe = () => {
     };
     window.addEventListener('resize', handleResize);
 
-    // Cleanup
     return () => {
       if (mountRef.current) {
         mountRef.current.removeChild(renderer.domElement);
