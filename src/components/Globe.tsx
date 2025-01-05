@@ -22,21 +22,27 @@ const Globe = () => {
     renderer.setPixelRatio(window.devicePixelRatio);
     mountRef.current.appendChild(renderer.domElement);
 
-    // Enhanced globe creation
+    // Enhanced globe creation with better geometry resolution
     const globeGeometry = new THREE.SphereGeometry(2, 64, 64);
     
-    // Load Earth texture with better mapping
+    // Load Earth texture with improved mapping
     const textureLoader = new THREE.TextureLoader();
-    const globeTexture = textureLoader.load('/lovable-uploads/dd06865b-f21a-46c2-baa9-f067adac35ee.png', (texture) => {
+    const globeTexture = textureLoader.load('/lovable-uploads/33d60aea-ec22-40f9-bba3-519f2cbf9c56.png', (texture) => {
       texture.wrapS = THREE.RepeatWrapping;
       texture.wrapT = THREE.RepeatWrapping;
-      texture.repeat.set(1, 1);
-      texture.offset.x = 0.5; // Adjust to align the texture properly
+      texture.repeat.set(2, 1); // Repeat texture horizontally twice
+      texture.offset.x = 0; // Reset offset
       texture.needsUpdate = true;
     });
 
     // Create normal map for better surface detail
-    const normalMap = textureLoader.load('/lovable-uploads/dd06865b-f21a-46c2-baa9-f067adac35ee.png');
+    const normalMap = textureLoader.load('/lovable-uploads/33d60aea-ec22-40f9-bba3-519f2cbf9c56.png', (texture) => {
+      texture.wrapS = THREE.RepeatWrapping;
+      texture.wrapT = THREE.RepeatWrapping;
+      texture.repeat.set(2, 1); // Match the color texture repeat
+      texture.offset.x = 0;
+      texture.needsUpdate = true;
+    });
     
     // Enhanced material with better shading
     const globeMaterial = new THREE.MeshPhongMaterial({
