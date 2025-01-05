@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface TwitterThreadColumnProps {
-  tweets: string[];
+  tweets: readonly string[];
 }
 
 const TwitterThreadColumn = memo(({ tweets }: TwitterThreadColumnProps) => (
