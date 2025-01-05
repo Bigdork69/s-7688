@@ -34,26 +34,26 @@ const TwitterThreadsGrid = () => {
       `<blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr">13/ How do I earn points?<br><br>Firstly, you can complete quests on the media ecosystem of DASTAN which includes to read articles on Decrypt, listen to FOMO Hour X space, Watch youtube interview by Farokh, X/Twitter quests, etc...<br><br>You can also participate in NFT community quests like… <a href="https://t.co/93GkW9gTfU">pic.twitter.com/93GkW9gTfU</a></p>&mdash; ※ Vince (@vincevanbtc) <a href="https://twitter.com/vincevanbtc/status/1874942727437046141?ref_src=twsrc%5Etfw">January 2, 2025</a></blockquote>`
     ],
     `<blockquote class="twitter-tweet"><p lang="en" dir="ltr">MYRIAD Points are the foundation of the MYRIAD ecosystem.<br><br>Here&#39;s everything you need to know about MYRIAD Points 🧵 <a href="https://t.co/Hs8Gy7Iqrm">pic.twitter.com/Hs8Gy7Iqrm</a></p>&mdash; MYRIAD (@MyriadMarkets) <a href="https://twitter.com/MyriadMarkets/status/1747664131664339087?ref_src=twsrc%5Etfw">January 17, 2024</a></blockquote>`
-  ] as [string[], string]; // Type assertion to specify the exact structure
+  ] as [string[], string];
 
   return (
-    <div className="py-24 bg-black">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+    <div className="py-12 bg-black">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="text-center mb-8">
           <h2 className="text-4xl font-bold text-white mb-4">What People Are Saying</h2>
           <p className="text-lg text-gray-300">
             Join the conversation about MYRIAD
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* First column with scrollable thread */}
-          <ScrollArea className="h-[80vh] w-full rounded-md bg-white/80">
+          <ScrollArea className="h-[60vh] md:h-[70vh] w-full rounded-md bg-white/80">
             <div className="flex flex-col gap-4 p-4">
               {Array.isArray(threadsGrid[0]) && threadsGrid[0].map((tweet, index) => (
                 <div 
                   key={index} 
-                  className="w-full min-h-[300px] flex items-start"
+                  className="w-full overflow-hidden"
                   dangerouslySetInnerHTML={{ __html: tweet }} 
                 />
               ))}
@@ -61,9 +61,9 @@ const TwitterThreadsGrid = () => {
           </ScrollArea>
 
           {/* Second column with single tweet */}
-          <ScrollArea className="h-[80vh] w-full rounded-md bg-white/80">
+          <ScrollArea className="h-[60vh] md:h-[70vh] w-full rounded-md bg-white/80">
             <div 
-              className="p-4 min-h-[300px] flex items-start" 
+              className="p-4 overflow-hidden" 
               dangerouslySetInnerHTML={{ __html: threadsGrid[1] }} 
             />
           </ScrollArea>
