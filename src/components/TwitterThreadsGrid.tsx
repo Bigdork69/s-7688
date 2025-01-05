@@ -34,7 +34,7 @@ const TwitterThreadsGrid = () => {
       `<blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr">13/ How do I earn points?<br><br>Firstly, you can complete quests on the media ecosystem of DASTAN which includes to read articles on Decrypt, listen to FOMO Hour X space, Watch youtube interview by Farokh, X/Twitter quests, etc...<br><br>You can also participate in NFT community quests like… <a href="https://t.co/93GkW9gTfU">pic.twitter.com/93GkW9gTfU</a></p>&mdash; ※ Vince (@vincevanbtc) <a href="https://twitter.com/vincevanbtc/status/1874942727437046141?ref_src=twsrc%5Etfw">January 2, 2025</a></blockquote>`
     ],
     `<blockquote class="twitter-tweet"><p lang="en" dir="ltr">MYRIAD Points are the foundation of the MYRIAD ecosystem.<br><br>Here&#39;s everything you need to know about MYRIAD Points 🧵 <a href="https://t.co/Hs8Gy7Iqrm">pic.twitter.com/Hs8Gy7Iqrm</a></p>&mdash; MYRIAD (@MyriadMarkets) <a href="https://twitter.com/MyriadMarkets/status/1747664131664339087?ref_src=twsrc%5Etfw">January 17, 2024</a></blockquote>`
-  ];
+  ] as [string[], string]; // Type assertion to specify the exact structure
 
   return (
     <div className="py-24 bg-black">
@@ -54,7 +54,7 @@ const TwitterThreadsGrid = () => {
                 <div 
                   key={index} 
                   className="w-full" 
-                  dangerouslySetInnerHTML={{ __html: tweet as string }} 
+                  dangerouslySetInnerHTML={{ __html: tweet }} 
                 />
               ))}
             </div>
