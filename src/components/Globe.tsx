@@ -60,7 +60,7 @@ const Globe = () => {
     
     // Create car sprite with new image
     const carTextureLoader = new THREE.TextureLoader();
-    carTextureLoader.load('/lovable-uploads/e7755a0f-26cb-4148-abb0-4744153a1db6.png', (texture) => {
+    carTextureLoader.load('/lovable-uploads/b6b05543-ff5b-4c47-b39d-3ca888ffc2ef.png', (texture) => {
       const carMaterial = new THREE.SpriteMaterial({ map: texture });
       const car = new THREE.Sprite(carMaterial);
       car.scale.set(0.8, 0.8, 1);
