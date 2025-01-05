@@ -88,12 +88,12 @@ const Globe = () => {
     camera.aspect = mountRef.current.clientWidth / mountRef.current.clientHeight;
     camera.updateProjectionMatrix();
 
-    // Smooth orbital animation with horizontal car orientation
+    // Smooth orbital animation with horizontal car orientation and 30% faster speed
     const animate = () => {
       requestAnimationFrame(animate);
       
       if (carRef.current) {
-        orbitRef.current += 0.005;
+        orbitRef.current += 0.0065; // Increased from 0.005 to 0.0065 (30% faster)
         const radius = 2.5;
         const height = Math.sin(orbitRef.current * 0.5) * 0.2;
         
