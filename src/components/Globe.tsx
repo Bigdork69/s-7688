@@ -4,7 +4,7 @@ import * as THREE from 'three';
 const Globe = () => {
   const mountRef = useRef<HTMLDivElement>(null);
   const globeRef = useRef<THREE.Group | null>(null);
-  const carRef = useRef<THREE.Mesh | null>(null);
+  const carRef = useRef<THREE.Sprite | null>(null);
 
   useEffect(() => {
     if (!mountRef.current) return;
@@ -84,7 +84,9 @@ const Globe = () => {
           carRef.current.position.x = Math.sin(angle) * 2.5;
           carRef.current.position.z = Math.cos(angle) * 2.5;
           // Make car always face the camera
-          carRef.current.material.rotation = -angle;
+          if (carRef.current.material instanceof THREE.SpriteMaterial) {
+            carRef.current.material.rotation = -angle;
+          }
         }
       }
       renderer.render(scene, camera);
