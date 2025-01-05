@@ -38,7 +38,7 @@ const TwitterThreadsGrid = () => {
 
   return (
     <div className="py-24 bg-black">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-white mb-4">What People Are Saying</h2>
           <p className="text-lg text-gray-300">
@@ -48,12 +48,12 @@ const TwitterThreadsGrid = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* First column with scrollable thread */}
-          <ScrollArea className="h-[600px] md:h-[700px] w-full rounded-md bg-white/80">
-            <div className="space-y-4 p-2">
+          <ScrollArea className="h-[80vh] w-full rounded-md bg-white/80">
+            <div className="flex flex-col gap-4 p-4">
               {Array.isArray(threadsGrid[0]) && threadsGrid[0].map((tweet, index) => (
                 <div 
                   key={index} 
-                  className="w-full" 
+                  className="w-full min-h-[300px] flex items-start"
                   dangerouslySetInnerHTML={{ __html: tweet }} 
                 />
               ))}
@@ -61,9 +61,9 @@ const TwitterThreadsGrid = () => {
           </ScrollArea>
 
           {/* Second column with single tweet */}
-          <ScrollArea className="h-[600px] md:h-[700px] w-full rounded-md bg-white/80">
+          <ScrollArea className="h-[80vh] w-full rounded-md bg-white/80">
             <div 
-              className="p-2" 
+              className="p-4 min-h-[300px] flex items-start" 
               dangerouslySetInnerHTML={{ __html: threadsGrid[1] }} 
             />
           </ScrollArea>
