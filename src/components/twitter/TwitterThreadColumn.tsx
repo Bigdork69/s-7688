@@ -12,7 +12,7 @@ const TwitterThreadColumn = memo(({ tweets }: TwitterThreadColumnProps) => (
         {tweets.map((tweet, index) => (
           <div 
             key={index} 
-            className="w-full"
+            className="w-full max-w-[100vw] md:max-w-full mx-auto px-2 md:px-4"
             dangerouslySetInnerHTML={{ __html: tweet }} 
           />
         ))}

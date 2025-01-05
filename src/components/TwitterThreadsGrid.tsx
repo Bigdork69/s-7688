@@ -46,7 +46,7 @@ const threadsGrid = [
 const TwitterThreadsGrid = memo(() => {
   return (
     <div className="py-12 bg-black">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="container mx-auto px-2 sm:px-4 max-w-7xl">
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold text-white mb-4">Still On The Fence? Read on</h2>
           <p className="text-lg text-gray-300">
@@ -56,7 +56,7 @@ const TwitterThreadsGrid = memo(() => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
           {/* First column with scrollable thread */}
           <TwitterThreadColumn tweets={threadsGrid[0]} />
 

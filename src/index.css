@@ -44,3 +44,14 @@
   background-image: radial-gradient(circle at 1px 1px, #828179 2px, transparent 0);
   background-size: 24px 24px;
 }
+
+/* Twitter embed responsive styles */
+.twitter-tweet {
+  margin: 0 auto !important;
+  max-width: 100% !important;
+}
+
+iframe[id^='twitter-widget-'] {
+  max-width: 100% !important;
+  width: 100% !important;
+}
