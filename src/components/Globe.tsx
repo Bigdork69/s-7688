@@ -22,11 +22,10 @@ const Globe = () => {
     // Load texture and ensure it wraps correctly around the sphere
     const textureLoader = new THREE.TextureLoader();
     const globeTexture = textureLoader.load('/lovable-uploads/dd06865b-f21a-46c2-baa9-f067adac35ee.png', (texture) => {
-      texture.wrapS = THREE.ClampToEdgeWrapping;
-      texture.wrapT = THREE.ClampToEdgeWrapping;
-      texture.offset.x = 0; // Reset offset
+      texture.wrapS = THREE.RepeatWrapping;
+      texture.wrapT = THREE.RepeatWrapping;
       texture.repeat.set(1, 1);
-      texture.center.set(0.5, 0.5); // Center the texture
+      texture.offset.x = 0.25; // Adjust offset to align the texture properly
       texture.needsUpdate = true;
     });
     
@@ -38,7 +37,7 @@ const Globe = () => {
     });
     
     const globe = new THREE.Mesh(globeGeometry, globeMaterial);
-    globe.rotation.y = -Math.PI / 2; // Adjust initial rotation to show the correct side
+    globe.rotation.y = Math.PI; // Initial rotation to show the correct side
     
     globeRef.current = new THREE.Group();
     globeRef.current.add(globe);
