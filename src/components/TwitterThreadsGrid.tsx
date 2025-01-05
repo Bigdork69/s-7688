@@ -56,12 +56,12 @@ const TwitterThreadsGrid = () => {
   ] as [string[], string[]];
 
   return (
-    <div className="py-12">
+    <div className="py-12 bg-black">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-8">
-          <h2 className="text-4xl font-bold text-white mb-4">What People Are Saying</h2>
+          <h2 className="text-4xl font-bold text-white mb-4">Still On The Fence? Read on</h2>
           <p className="text-lg text-gray-300">
-            Join the conversation about MYRIAD
+            threads by @tylerdurdeth @vincevanbtc
           </p>
         </div>
         
