@@ -21,7 +21,7 @@ const Index = () => {
       {/* Globe Section */}
       <div className="relative bg-black py-24">
         <div className="container mx-auto px-4">
-          <div className="glass rounded-3xl shadow-2xl overflow-hidden">
+          <div className="glass rounded-3xl overflow-hidden">
             <div className="relative">
               {/* Subtle animated starfield background */}
               <div className="absolute inset-0 bg-gradient-to-br from-black via-blue-950/20 to-purple-950/20">
@@ -29,12 +29,12 @@ const Index = () => {
                 {[...Array(100)].map((_, i) => (
                   <div
                     key={i}
-                    className="absolute w-[2px] h-[2px] bg-white/40 rounded-full animate-float"
+                    className="absolute w-[2px] h-[2px] bg-white rounded-full animate-float"
                     style={{
                       left: `${Math.random() * 100}%`,
                       top: `${Math.random() * 100}%`,
                       animationDelay: `${Math.random() * 5}s`,
-                      animationDuration: '4.8s'
+                      animationDuration: '2.88s'  // 40% faster than original 4.8s
                     }}
                   />
                 ))}
