@@ -30,7 +30,7 @@ const Globe = () => {
     // Create globe
     const globeGeometry = new THREE.SphereGeometry(2, 32, 32);
     const globeMaterial = new THREE.MeshPhongMaterial({
-      map: new THREE.TextureLoader().load('/lovable-uploads/236d6216-acd1-4137-9cc0-24f78adefe18.png'),
+      map: new THREE.TextureLoader().load('/lovable-uploads/aaf7ed3e-b54d-44bc-8383-702d69ee1a59.png'),
       transparent: true,
       opacity: 0.9,
     });
