@@ -56,12 +56,21 @@ const TwitterThreadsGrid = memo(() => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
-          {/* First column with scrollable thread */}
-          <TwitterThreadColumn tweets={threadsGrid[0]} />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+          {/* First thread column */}
+          <div className="space-y-4">
+            <h3 className="text-xl font-semibold text-white mb-4">Thread by @vincevanbtc</h3>
+            <TwitterThreadColumn tweets={threadsGrid[0]} />
+          </div>
 
-          {/* Second column with thread */}
-          <TwitterThreadColumn tweets={threadsGrid[1]} />
+          {/* Vertical divider for desktop */}
+          <div className="hidden lg:block absolute left-1/2 top-[15%] bottom-[15%] w-px bg-gray-700/30" />
+
+          {/* Second thread column */}
+          <div className="space-y-4">
+            <h3 className="text-xl font-semibold text-white mb-4">Thread by @tylerdurdeth</h3>
+            <TwitterThreadColumn tweets={threadsGrid[1]} />
+          </div>
         </div>
       </div>
     </div>
