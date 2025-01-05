@@ -17,8 +17,9 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
+      <Features />
       
-      {/* Globe Section */}
+      {/* Globe Section - Moved below Features */}
       <div className="relative bg-black py-24">
         <div className="container mx-auto px-4">
           <div className="glass rounded-3xl overflow-hidden">
@@ -34,7 +35,7 @@ const Index = () => {
                       left: `${Math.random() * 100}%`,
                       top: `${Math.random() * 100}%`,
                       animationDelay: `${Math.random() * 5}s`,
-                      animationDuration: '2.88s'  // 40% faster than original 4.8s
+                      animationDuration: '2.88s'
                     }}
                   />
                 ))}
@@ -53,7 +54,6 @@ const Index = () => {
         </div>
       </div>
 
-      <Features />
       <Stats />
       <QuoteSection />
       
