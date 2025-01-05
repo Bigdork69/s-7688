@@ -37,7 +37,7 @@
 }
 
 .glass {
-  @apply bg-white bg-opacity-10 backdrop-blur-lg;
+  @apply bg-gradient-to-b from-white/5 to-transparent backdrop-blur-lg;
 }
 
 .dot-pattern {
