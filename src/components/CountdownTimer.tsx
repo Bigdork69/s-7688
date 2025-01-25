@@ -38,11 +38,11 @@ const CountdownTimer = () => {
   const TimeUnit = ({ value, label }: { value: number; label: string }) => (
     <div className="flex flex-col items-center mx-4">
       <div className="relative">
-        <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-white font-mono tracking-wider relative z-10">
+        <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#00E676] font-mono tracking-wider relative z-10">
           {value.toString().padStart(2, '0')}
         </div>
       </div>
-      <div className="text-xs md:text-sm text-white/70 mt-2 tracking-widest uppercase">
+      <div className="text-xs md:text-sm text-[#00E676]/70 mt-2 tracking-widest uppercase">
         {label}
       </div>
     </div>
@@ -52,16 +52,16 @@ const CountdownTimer = () => {
     <div className="w-full">
       <div className="w-full">
         <div className="relative w-full py-8 md:py-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#00E676] mb-8">
             Countdown to Abstract Launch
           </h2>
           <div className="flex justify-center items-center space-x-2 md:space-x-4">
             <TimeUnit value={timeLeft.days} label="Days" />
-            <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-white/50 -mt-8">:</div>
+            <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#00E676]/50 -mt-8">:</div>
             <TimeUnit value={timeLeft.hours} label="Hours" />
-            <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-white/50 -mt-8">:</div>
+            <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#00E676]/50 -mt-8">:</div>
             <TimeUnit value={timeLeft.minutes} label="Minutes" />
-            <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-white/50 -mt-8">:</div>
+            <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#00E676]/50 -mt-8">:</div>
             <TimeUnit value={timeLeft.seconds} label="Seconds" />
           </div>
         </div>
