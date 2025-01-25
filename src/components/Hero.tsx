@@ -1,51 +1,101 @@
-import { memo } from 'react';
+import { memo, useEffect, useRef } from 'react';
+import { Button } from './ui/button';
+import { animate } from 'framer-motion';
+
+interface StatProps {
+  value: number;
+  label: string;
+  delay: number;
+}
+
+const Stat = ({ value, label, delay }: StatProps) => {
+  const countRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const node = countRef.current;
+    if (node) {
+      const controls = animate(0, value, {
+        duration: 2,
+        delay,
+        onUpdate(value) {
+          node.textContent = value.toLocaleString();
+        },
+        ease: [0.34, 1.56, 0.64, 1], // Custom ease with bounce
+      });
+
+      return () => controls.stop();
+    }
+  }, [value, delay]);
+
+  return (
+    <div className="flex flex-col items-center justify-center">
+      <span ref={countRef} className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">
+        0
+      </span>
+      <span className="text-sm md:text-base text-gray-300 text-center max-w-[120px]">
+        {label}
+      </span>
+    </div>
+  );
+};
 
 const Hero = memo(() => {
   return (
-    <div className="relative min-h-screen flex items-center bg-white">
-      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-        {/* Left side - Laptop mockup */}
-        <div className="lg:w-1/2 flex justify-center lg:justify-end w-full">
-          <div className="relative w-full max-w-[640px]">
-            {/* Laptop lid */}
-            <div className="relative w-full aspect-[16/10] bg-gray-800 rounded-t-lg p-2">
-              {/* Screen */}
-              <div className="w-full h-full bg-[#15202b] rounded-sm flex items-center justify-center overflow-hidden p-3">
-                <div className="w-full max-w-[560px] flex items-center justify-center">
-                  <img 
-                    src="/lovable-uploads/0ce138c5-ae64-42d0-bb9a-8d724d03f725.png" 
-                    alt="Twitter post about Myriad alpha"
-                    className="w-full h-auto object-contain"
-                    loading="eager"
-                    decoding="async"
-                    style={{ imageRendering: 'crisp-edges' }}
-                  />
-                </div>
-              </div>
-            </div>
-            {/* Laptop base */}
-            <div className="relative w-full h-[30px] bg-gray-700 rounded-b-lg">
-              {/* Touchpad area */}
-              <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[100px] h-[5px] bg-gray-600 rounded-b-lg"></div>
-            </div>
-          </div>
-        </div>
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900">
+      {/* Animated background graph */}
+      <div className="absolute inset-0 opacity-20">
+        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path
+            d="M0,50 Q25,30 50,50 T100,50"
+            className="text-blue-500 stroke-current fill-none animate-pulse"
+            strokeWidth="0.5"
+          />
+          <path
+            d="M0,60 Q25,40 50,60 T100,60"
+            className="text-purple-500 stroke-current fill-none animate-pulse"
+            strokeWidth="0.5"
+          />
+        </svg>
+      </div>
 
-        {/* Right side - Content */}
-        <div className="lg:w-1/2 text-left">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4 sm:mb-6 text-[#141413] flex flex-col">
-            <span>GMYRIAD</span>
-            <span>No More Small Shit</span>
-            <span>Scroll Down For Alpha 👇</span>
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8">
-            *The tweet blew up so much we created a website to spread the word
-          </p>
-          <div className="max-w-md">
-            <p className="mt-4 text-sm sm:text-base inline-block text-[#141413] font-medium italic font-bold">
-              For entertainment purposes only. This fan-made site is not affiliated with Myriad and does not provide financial advice
+      {/* Holographic overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-transparent via-purple-500/10 to-transparent pointer-events-none" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="flex flex-col items-center text-center space-y-12">
+          {/* Logo and Title */}
+          <div className="space-y-6 animate-fade-in">
+            <div className="flex items-center justify-center space-x-2">
+              <img 
+                src="/lovable-uploads/f7e14a8c-d270-473c-b043-a2ab48c44c7d.png" 
+                alt="Myriad Logo" 
+                className="h-12 w-auto"
+              />
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-wider">
+              PRE-SZN IS NOW COMPLETE
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300">
+              THANK YOU
+            </p>
+            <p className="text-lg md:text-xl text-gray-400">
+              YOU WERE SO EARLY
             </p>
           </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 w-full max-w-4xl mx-auto">
+            <Stat value={42000} label="Pre-SZN Participants" delay={0.2} />
+            <Stat value={695000} label="On-chain Transactions" delay={0.4} />
+            <Stat value={165000000} label="Total Points Transacted" delay={0.6} />
+          </div>
+
+          {/* CTA Button */}
+          <Button 
+            className="mt-8 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white px-8 py-6 rounded-lg text-lg font-semibold transform hover:scale-105 transition-all duration-200 animate-bounce"
+          >
+            Scroll Down for Alpha
+          </Button>
         </div>
       </div>
     </div>
