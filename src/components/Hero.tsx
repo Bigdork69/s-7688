@@ -1,5 +1,4 @@
 import { memo, useEffect, useRef } from 'react';
-import { Button } from './ui/button';
 import { animate } from 'framer-motion';
 
 interface StatProps {
@@ -63,24 +62,11 @@ const Hero = memo(() => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center text-center space-y-12">
-          {/* Logo and Title */}
+          {/* Title */}
           <div className="space-y-6 animate-fade-in">
-            <div className="flex items-center justify-center space-x-2">
-              <img 
-                src="/lovable-uploads/f7e14a8c-d270-473c-b043-a2ab48c44c7d.png" 
-                alt="Myriad Logo" 
-                className="h-12 w-auto"
-              />
-            </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-wider">
               PRE-SZN IS NOW COMPLETE
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300">
-              THANK YOU
-            </p>
-            <p className="text-lg md:text-xl text-gray-400">
-              YOU WERE SO EARLY
-            </p>
           </div>
 
           {/* Stats */}
@@ -90,12 +76,12 @@ const Hero = memo(() => {
             <Stat value={165000000} label="Total Points Transacted" delay={0.6} />
           </div>
 
-          {/* CTA Button */}
-          <Button 
-            className="mt-8 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white px-8 py-6 rounded-lg text-lg font-semibold transform hover:scale-105 transition-all duration-200 animate-bounce"
+          {/* CTA Button (non-interactive) */}
+          <div 
+            className="mt-8 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-8 py-6 rounded-lg text-lg font-semibold"
           >
             Scroll Down for Alpha
-          </Button>
+          </div>
         </div>
       </div>
     </div>
