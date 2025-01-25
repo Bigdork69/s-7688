@@ -70,6 +70,7 @@ const CountdownTimer = () => {
         
         {/* Countdown display */}
         <div className="relative glass rounded-xl p-8 md:p-12 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/10">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 tracking-wider">Abstract Countdown</h2>
           <div className="flex justify-center items-center space-x-2 md:space-x-4">
             <TimeUnit value={timeLeft.days} label="Days" />
             <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-white/50 -mt-8">:</div>
