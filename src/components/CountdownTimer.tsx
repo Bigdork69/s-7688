@@ -50,8 +50,8 @@ const CountdownTimer = () => {
   );
 
   return (
-    <div className="w-full mt-12 mb-8">
-      <div className="relative">
+    <div className="w-full">
+      <div className="relative w-full">
         {/* Background gradient and particles */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#00E676]/20 via-[#00E676]/10 to-transparent" />
         <div className="absolute inset-0">
@@ -69,8 +69,8 @@ const CountdownTimer = () => {
         </div>
         
         {/* Countdown display */}
-        <div className="relative glass p-8 md:p-12 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#00E676]/30" style={{ background: '#00E676' }}>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 tracking-wider">Abstract Countdown</h2>
+        <div className="relative w-full glass py-8 md:py-12 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#00E676]/30" style={{ background: '#00E676' }}>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 tracking-wider text-center">Abstract Countdown</h2>
           <div className="flex justify-center items-center space-x-2 md:space-x-4">
             <TimeUnit value={timeLeft.days} label="Days" />
             <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-white/50 -mt-8">:</div>
