@@ -17,7 +17,16 @@ const Stat = ({ value, label, delay }: StatProps) => {
         duration: 2,
         delay,
         onUpdate(value) {
-          node.textContent = value.toLocaleString();
+          // Format the number based on its size
+          let formattedValue;
+          if (value >= 1000000) {
+            formattedValue = (value / 1000000).toFixed(0) + 'M';
+          } else if (value >= 1000) {
+            formattedValue = (value / 1000).toFixed(0) + 'K';
+          } else {
+            formattedValue = value.toLocaleString();
+          }
+          node.textContent = formattedValue;
         },
         ease: [0.34, 1.56, 0.64, 1], // Custom ease with bounce
       });
@@ -27,8 +36,8 @@ const Stat = ({ value, label, delay }: StatProps) => {
   }, [value, delay]);
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <span ref={countRef} className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">
+    <div className="flex flex-col items-center justify-center min-w-[200px]">
+      <span ref={countRef} className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 tabular-nums">
         0
       </span>
       <span className="text-sm md:text-base text-gray-300 text-center max-w-[120px]">
