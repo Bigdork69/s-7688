@@ -53,7 +53,7 @@ const CountdownTimer = () => {
       <div className="w-full">
         <div className="relative w-full py-8 md:py-12">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">
-            Abstract Countdown
+            Countdown to Abstract Launch
           </h2>
           <div className="flex justify-center items-center space-x-2 md:space-x-4">
             <TimeUnit value={timeLeft.days} label="Days" />
