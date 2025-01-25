@@ -73,8 +73,8 @@ const Hero = memo(() => {
         <div className="flex flex-col items-center text-center space-y-12">
           {/* Title */}
           <div className="space-y-6 animate-fade-in">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-wider">
-              PRE-SZN IS NOW COMPLETE
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-wider px-4">
+              MYRIAD PRE-SZN IS NOW COMPLETE
             </h1>
           </div>
 
