@@ -38,12 +38,12 @@ const CountdownTimer = () => {
   const TimeUnit = ({ value, label }: { value: number; label: string }) => (
     <div className="flex flex-col items-center mx-4 group transition-all duration-300">
       <div className="relative">
-        <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-white font-mono tracking-wider relative z-10 transition-all duration-300 group-hover:text-highlight">
+        <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-black font-mono tracking-wider relative z-10 transition-all duration-300 group-hover:text-white">
           {value.toString().padStart(2, '0')}
         </div>
         <div className="absolute inset-0 bg-white/5 blur-xl rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
       </div>
-      <div className="text-xs md:text-sm text-gray-400 mt-2 tracking-widest uppercase">
+      <div className="text-xs md:text-sm text-black/70 mt-2 tracking-widest uppercase">
         {label}
       </div>
     </div>
@@ -53,7 +53,7 @@ const CountdownTimer = () => {
     <div className="w-full mt-12 mb-8">
       <div className="relative">
         {/* Background gradient and particles */}
-        <div className="absolute inset-0 bg-gradient-to-b from-purple-900/20 via-blue-900/10 to-transparent rounded-xl" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#00E676]/20 via-[#00E676]/10 to-transparent rounded-xl" />
         <div className="absolute inset-0">
           {[...Array(20)].map((_, i) => (
             <div
@@ -69,15 +69,15 @@ const CountdownTimer = () => {
         </div>
         
         {/* Countdown display */}
-        <div className="relative glass rounded-xl p-8 md:p-12 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/10">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 tracking-wider">Abstract Countdown</h2>
+        <div className="relative glass rounded-xl p-8 md:p-12 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#00E676]/30" style={{ background: '#00E676' }}>
+          <h2 className="text-2xl md:text-3xl font-bold text-black mb-8 tracking-wider">Abstract Countdown</h2>
           <div className="flex justify-center items-center space-x-2 md:space-x-4">
             <TimeUnit value={timeLeft.days} label="Days" />
-            <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-white/50 -mt-8">:</div>
+            <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-black/50 -mt-8">:</div>
             <TimeUnit value={timeLeft.hours} label="Hours" />
-            <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-white/50 -mt-8">:</div>
+            <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-black/50 -mt-8">:</div>
             <TimeUnit value={timeLeft.minutes} label="Minutes" />
-            <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-white/50 -mt-8">:</div>
+            <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-black/50 -mt-8">:</div>
             <TimeUnit value={timeLeft.seconds} label="Seconds" />
           </div>
         </div>
