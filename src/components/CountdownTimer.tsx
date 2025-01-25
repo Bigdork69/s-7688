@@ -51,25 +51,14 @@ const CountdownTimer = () => {
   return (
     <div className="w-full">
       <div className="w-full">
-        {/* Background gradient and particles */}
+        {/* Background gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#00E676]/20 via-[#00E676]/10 to-transparent" />
-        <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-white rounded-full animate-float"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-              }}
-            />
-          ))}
-        </div>
         
         {/* Countdown display */}
         <div className="relative w-full glass py-8 md:py-12" style={{ background: '#00E676' }}>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 tracking-wider text-center">Abstract Countdown</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 tracking-wider text-center">
+            Abstract Countdown
+          </h2>
           <div className="flex justify-center items-center space-x-2 md:space-x-4">
             <TimeUnit value={timeLeft.days} label="Days" />
             <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-white/50 -mt-8">:</div>
