@@ -36,12 +36,11 @@ const CountdownTimer = () => {
   }, []);
 
   const TimeUnit = ({ value, label }: { value: number; label: string }) => (
-    <div className="flex flex-col items-center mx-4 group transition-all duration-300">
+    <div className="flex flex-col items-center mx-4">
       <div className="relative">
-        <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-white font-mono tracking-wider relative z-10 transition-all duration-300">
+        <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-white font-mono tracking-wider relative z-10">
           {value.toString().padStart(2, '0')}
         </div>
-        <div className="absolute inset-0 bg-white/5 blur-xl rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
       </div>
       <div className="text-xs md:text-sm text-white/70 mt-2 tracking-widest uppercase">
         {label}
@@ -51,7 +50,7 @@ const CountdownTimer = () => {
 
   return (
     <div className="w-full">
-      <div className="relative w-full">
+      <div className="w-full">
         {/* Background gradient and particles */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#00E676]/20 via-[#00E676]/10 to-transparent" />
         <div className="absolute inset-0">
@@ -69,7 +68,7 @@ const CountdownTimer = () => {
         </div>
         
         {/* Countdown display */}
-        <div className="relative w-full glass py-8 md:py-12 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#00E676]/30" style={{ background: '#00E676' }}>
+        <div className="relative w-full glass py-8 md:py-12" style={{ background: '#00E676' }}>
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 tracking-wider text-center">Abstract Countdown</h2>
           <div className="flex justify-center items-center space-x-2 md:space-x-4">
             <TimeUnit value={timeLeft.days} label="Days" />
