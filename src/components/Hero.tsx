@@ -71,9 +71,9 @@ const Hero = memo(() => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center text-center space-y-12">
-          {/* Title */}
-          <div className="space-y-6 animate-fade-in">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-wider px-4">
+          {/* Title - Updated for better mobile visibility */}
+          <div className="space-y-6 animate-fade-in max-w-4xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-wider px-4 leading-tight shadow-lg drop-shadow-lg bg-black/20 py-4 rounded-lg backdrop-blur-sm">
               MYRIAD PRE-SZN IS NOW COMPLETE
             </h1>
           </div>
