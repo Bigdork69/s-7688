@@ -1,0 +1,88 @@
+import { useEffect, useState } from 'react';
+
+const CountdownTimer = () => {
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
+
+  useEffect(() => {
+    // Set end date to 2 days and 14 hours from now
+    const endDate = new Date();
+    endDate.setDate(endDate.getDate() + 2);
+    endDate.setHours(endDate.getHours() + 14);
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = endDate.getTime() - now;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        return;
+      }
+
+      setTimeLeft({
+        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((distance % (1000 * 60)) / 1000)
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const TimeUnit = ({ value, label }: { value: number; label: string }) => (
+    <div className="flex flex-col items-center mx-4 group transition-all duration-300">
+      <div className="relative">
+        <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-white font-mono tracking-wider relative z-10 transition-all duration-300 group-hover:text-highlight">
+          {value.toString().padStart(2, '0')}
+        </div>
+        <div className="absolute inset-0 bg-white/5 blur-xl rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
+      </div>
+      <div className="text-xs md:text-sm text-gray-400 mt-2 tracking-widest uppercase">
+        {label}
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="w-full mt-12 mb-8">
+      <div className="relative">
+        {/* Background gradient and particles */}
+        <div className="absolute inset-0 bg-gradient-to-b from-purple-900/20 via-blue-900/10 to-transparent rounded-xl" />
+        <div className="absolute inset-0">
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 bg-white rounded-full animate-float"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+              }}
+            />
+          ))}
+        </div>
+        
+        {/* Countdown display */}
+        <div className="relative glass rounded-xl p-8 md:p-12 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/10">
+          <div className="flex justify-center items-center space-x-2 md:space-x-4">
+            <TimeUnit value={timeLeft.days} label="Days" />
+            <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-white/50 -mt-8">:</div>
+            <TimeUnit value={timeLeft.hours} label="Hours" />
+            <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-white/50 -mt-8">:</div>
+            <TimeUnit value={timeLeft.minutes} label="Minutes" />
+            <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-white/50 -mt-8">:</div>
+            <TimeUnit value={timeLeft.seconds} label="Seconds" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CountdownTimer;

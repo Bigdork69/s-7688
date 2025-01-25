@@ -1,5 +1,6 @@
 import { memo, useEffect, useRef } from 'react';
 import { animate } from 'framer-motion';
+import CountdownTimer from './CountdownTimer';
 
 interface StatProps {
   value: number;
@@ -50,7 +51,6 @@ const Stat = ({ value, label, delay }: StatProps) => {
 const Hero = memo(() => {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900">
-      {/* Animated background graph */}
       <div className="absolute inset-0 opacity-20">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
           <path
@@ -91,6 +91,9 @@ const Hero = memo(() => {
           >
             Scroll Down for Alpha
           </div>
+
+          {/* Countdown Timer */}
+          <CountdownTimer />
         </div>
       </div>
     </div>
