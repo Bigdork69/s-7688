@@ -1,5 +1,5 @@
+
 import { memo } from 'react';
-import CountdownTimer from './CountdownTimer';
 import HeroTitle from './hero/HeroTitle';
 import StatsGrid from './hero/StatsGrid';
 import CTAButton from './hero/CTAButton';
@@ -29,7 +29,6 @@ const Hero = memo(() => {
           <HeroTitle />
           <StatsGrid />
           <CTAButton />
-          <CountdownTimer />
         </div>
       </div>
     </div>
