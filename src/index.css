@@ -44,31 +44,25 @@
     @apply py-20 px-6 md:px-12 lg:px-24;
   }
 
-  .fade-in {
-    opacity: 0;
-    animation: fadeIn 0.5s ease-out forwards;
-  }
-
-  .slide-in {
-    transform: translateX(-100%);
-    animation: slideIn 0.5s ease-out forwards;
-  }
-
-  @keyframes fadeIn {
-    from {
+  @keyframes counterAppear {
+    0% {
       opacity: 0;
+      transform: scale(0.9);
     }
-    to {
+    100% {
       opacity: 1;
+      transform: scale(1);
     }
   }
 
-  @keyframes slideIn {
-    from {
-      transform: translateX(-100%);
+  @keyframes labelAppear {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
     }
-    to {
-      transform: translateX(0);
+    100% {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
@@ -96,4 +90,16 @@
 
 .card-gradient {
   @apply bg-gradient-to-br from-white to-gray-100/80 backdrop-blur-sm;
+}
+
+/* Add animation classes to Tailwind */
+@layer utilities {
+  .animate-counter-appear {
+    animation: counterAppear 0.3s ease-out forwards;
+  }
+
+  .animate-label-appear {
+    animation: labelAppear 0.3s ease-out 0.15s forwards;
+    opacity: 0;
+  }
 }

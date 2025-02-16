@@ -28,11 +28,15 @@ const Counter = memo(({ value, label }: CounterProps) => (
       ))}
     </div>
     
-    {/* Counter value */}
-    <div className="text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-clip-text text-transparent slide-in fade-in relative z-10">
+    {/* Counter value with default visible state and animation */}
+    <div 
+      className="text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-clip-text text-transparent animate-counter-appear relative z-10"
+    >
       {value}
     </div>
-    <div className="mt-4 text-lg text-white fade-in relative z-10">
+    <div 
+      className="mt-4 text-lg text-white animate-label-appear relative z-10"
+    >
       {label}
     </div>
   </div>
