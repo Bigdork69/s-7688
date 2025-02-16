@@ -28,9 +28,9 @@ const Counter = memo(({ value, label }: CounterProps) => (
       ))}
     </div>
     
-    {/* Counter value with shadow pulse animation */}
+    {/* Counter value with enhanced shadow pulse animation */}
     <div 
-      className="text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-clip-text text-transparent animate-counter-appear animate-shadow-pulse relative z-10"
+      className="text-7xl font-bold bg-gradient-to-r from-blue-300 via-purple-300 to-blue-300 bg-clip-text text-transparent animate-counter-appear animate-shadow-pulse relative z-10"
     >
       {value}
     </div>
