@@ -1,4 +1,3 @@
-
 import Navbar from "../components/Navbar"
 import Hero from "../components/Hero"
 import Features from "../components/Features"
@@ -22,8 +21,12 @@ const Index = () => {
       <Features />
       
       {/* Globe Section */}
-      <div className="w-full bg-black py-24">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-blue-950/20 to-purple-950/20">
+      <div className="relative w-full bg-black py-24">
+        {/* Background Layer */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Gradient Background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black via-blue-950/20 to-purple-950/20" />
+          
           {/* Animated stars */}
           {[...Array(100)].map((_, i) => (
             <div
@@ -38,7 +41,8 @@ const Index = () => {
             />
           ))}
         </div>
-        
+
+        {/* Content Layer */}
         <div className="relative z-10 mx-auto max-w-7xl px-4">
           <div className="glass rounded-3xl overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2 items-center">
@@ -80,7 +84,7 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Twitter Threads Grid Section - Moved below Claim Checker */}
+      {/* Twitter Threads Grid Section */}
       <TwitterThreadsGrid />
 
       <FAQ />
