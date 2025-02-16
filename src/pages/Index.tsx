@@ -1,3 +1,4 @@
+
 import Navbar from "../components/Navbar"
 import Hero from "../components/Hero"
 import Features from "../components/Features"
@@ -89,7 +90,7 @@ const Index = () => {
       <KeyLinks />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Index
+export default Index;
