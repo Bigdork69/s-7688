@@ -1,3 +1,4 @@
+
 import Navbar from "../components/Navbar"
 import Hero from "../components/Hero"
 import Features from "../components/Features"
@@ -23,7 +24,7 @@ const Index = () => {
       {/* Globe Section */}
       <div className="relative w-full bg-black py-24">
         {/* Background Layer */}
-        <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0">
           {/* Gradient Background */}
           <div className="absolute inset-0 bg-gradient-to-br from-black via-blue-950/20 to-purple-950/20" />
           
