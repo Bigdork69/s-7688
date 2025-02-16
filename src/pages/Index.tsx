@@ -1,4 +1,3 @@
-
 import Navbar from "../components/Navbar"
 import Hero from "../components/Hero"
 import Features from "../components/Features"
@@ -23,38 +22,33 @@ const Index = () => {
       
       {/* Globe Section */}
       <div className="relative w-full bg-black py-24">
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="relative min-h-[600px] rounded-3xl">
-            {/* Background with stars */}
-            <div className="absolute inset-0 rounded-3xl overflow-hidden">
-              {/* Gradient Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-black via-blue-950/20 to-purple-950/20" />
-              
-              {/* Animated stars */}
-              {[...Array(100)].map((_, i) => (
-                <div
-                  key={i}
-                  className="absolute w-[2px] h-[2px] bg-white rounded-full animate-float"
-                  style={{
-                    left: `${Math.random() * 100}%`,
-                    top: `${Math.random() * 100}%`,
-                    animationDelay: `${Math.random() * 5}s`,
-                    animationDuration: '2.88s'
-                  }}
-                />
-              ))}
-            </div>
+        {/* Background Layer */}
+        <div className="absolute inset-0">
+          {/* Gradient Background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black via-blue-950/20 to-purple-950/20" />
+          
+          {/* Animated stars */}
+          {[...Array(100)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-[2px] h-[2px] bg-white rounded-full animate-float"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: '2.88s'
+              }}
+            />
+          ))}
+        </div>
 
-            {/* Glass effect overlay */}
-            <div className="absolute inset-0 bg-white/5 backdrop-blur-lg rounded-3xl" />
-
-            {/* Content Layer */}
-            <div className="relative z-10">
-              <div className="grid grid-cols-1 md:grid-cols-2 items-center min-h-[600px]">
-                <Globe />
-                <div className="flex items-center justify-center h-full">
-                  <LiveStats />
-                </div>
+        {/* Content Layer */}
+        <div className="relative z-10 mx-auto max-w-7xl px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 items-center">
+            <Globe />
+            <div className="flex items-center justify-center h-full relative">
+              <div className="relative z-10">
+                <LiveStats />
               </div>
             </div>
           </div>
