@@ -22,33 +22,30 @@ const Index = () => {
       <Features />
       
       {/* Globe Section */}
-      <div className="relative bg-black py-24">
-        <div className="container mx-auto px-4">
+      <div className="w-full bg-black py-24">
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-blue-950/20 to-purple-950/20">
+          {/* Animated stars */}
+          {[...Array(100)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-[2px] h-[2px] bg-white rounded-full animate-float"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: '2.88s'
+              }}
+            />
+          ))}
+        </div>
+        
+        <div className="relative z-10 mx-auto max-w-7xl px-4">
           <div className="glass rounded-3xl overflow-hidden">
-            <div className="relative">
-              {/* Subtle animated starfield background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-black via-blue-950/20 to-purple-950/20">
-                {/* Animated stars */}
-                {[...Array(100)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="absolute w-[2px] h-[2px] bg-white rounded-full animate-float"
-                    style={{
-                      left: `${Math.random() * 100}%`,
-                      top: `${Math.random() * 100}%`,
-                      animationDelay: `${Math.random() * 5}s`,
-                      animationDuration: '2.88s'
-                    }}
-                  />
-                ))}
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 items-center">
-                <Globe />
-                <div className="flex items-center justify-center h-full relative">
-                  <div className="relative z-10">
-                    <LiveStats />
-                  </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 items-center">
+              <Globe />
+              <div className="flex items-center justify-center h-full relative">
+                <div className="relative z-10">
+                  <LiveStats />
                 </div>
               </div>
             </div>
