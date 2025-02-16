@@ -35,30 +35,6 @@ const Counter = memo(({ value, label }: CounterProps) => (
     <div className="mt-4 text-lg text-white relative z-10">
       {label}
     </div>
-
-    <style>
-      {`
-        @keyframes float-up {
-          0%, 100% {
-            transform: translateY(100%) scale(1);
-          }
-          50% {
-            transform: translateY(-100%) scale(1.2);
-          }
-        }
-        @keyframes fade-particle {
-          0%, 100% {
-            opacity: 0;
-          }
-          25%, 75% {
-            opacity: 0.3;
-          }
-          50% {
-            opacity: 0.5;
-          }
-        }
-      `}
-    </style>
   </div>
 ));
 
