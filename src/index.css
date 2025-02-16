@@ -86,6 +86,20 @@
       opacity: 0.5;
     }
   }
+
+  @keyframes shadowPulse {
+    0%, 100% {
+      text-shadow: 
+        0 0 4px rgba(96, 165, 250, 0.2),
+        0 0 8px rgba(96, 165, 250, 0.1);
+    }
+    50% {
+      text-shadow: 
+        0 0 12px rgba(96, 165, 250, 0.3),
+        0 0 24px rgba(96, 165, 250, 0.2),
+        0 0 36px rgba(96, 165, 250, 0.1);
+    }
+  }
 }
 
 .card-gradient {
@@ -101,5 +115,9 @@
   .animate-label-appear {
     animation: labelAppear 0.3s ease-out 0.15s forwards;
     opacity: 0;
+  }
+
+  .animate-shadow-pulse {
+    animation: shadowPulse 4s ease-in-out infinite;
   }
 }
